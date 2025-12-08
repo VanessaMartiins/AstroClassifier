@@ -56,3 +56,49 @@ Critérios de qualidade:
 
 ## 🗂 Estrutura Recomendada do Projeto
 
+AstroClassifier/
+│
+├── data/ # Exemplo de dataset de entrada
+├── notebooks/ # Notebooks de análise e experimentos
+├── src/ # Código-fonte do modelo
+│ ├── model.py
+│ ├── train.py
+│ └── utils.py
+├── results/ # Gráficos, métricas e tabelas
+├── requirements.txt # Dependências do projeto
+└── README.md # Este arquivo
+
+
+---
+
+## ▶️ Como Executar
+
+```bash
+# Clonar o repositório
+git clone https://github.com/VanessaMartiins/AstroClassifier.git
+cd AstroClassifier
+
+# Instalar dependências
+pip install -r requirements.txt
+
+# Treinar o modelo
+python src/train.py
+
+🛠 Tecnologias
+
+Python
+
+PyTorch
+
+Pandas, NumPy, Matplotlib, Seaborn
+
+Scikit-Learn
+
+Jupyter Notebook
+
+👩‍🚀 Autora
+
+Vanessa Gomes Martins da Silva
+Estudante de Física Computacional — UFF
+📧 Contato: vanemartiins@gmail.com
+🔗 Portfólio: https://vanessamartins.github.io
