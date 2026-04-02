@@ -297,7 +297,7 @@ async function carregarCSVExemplo() {
     Papa.parse(textoCSV, {
       header: true,
       skipEmptyLines: true,
-      delimiter: ";",
+      delimiter: "",
       complete: function(results) {
         if (!results.data || results.data.length === 0) {
           alert("Nenhuma linha válida encontrada no dataset de demonstração.");
