@@ -20,65 +20,87 @@
 
   <main class="container">
 
-    <!-- SEÇÃO SOBRE -->
-    <div id="secao-sobre" style="display: none;">
-      <section class="painel">
-        <h2>📘 Sobre o Projeto</h2>
+<div id="secao-sobre" style="display: none;">
+  <section class="painel sobre">
 
-        <p>
-        <h3>🧠 AstroClassifier</h3>
+    <h2>📘 Sobre o Projeto</h2>
+
+    <div class="bloco">
+      <h3>🧠 AstroClassifier</h3>
+      <p>
         O <strong>AstroClassifier</strong> é uma aplicação web desenvolvida para a classificação automática de objetos astronômicos utilizando técnicas de Machine Learning.
-        O sistema foi treinado com dados fotométricos provenientes do Sloan Digital Sky Survey (SDSS) em conjunto com o catálogo WISE, permitindo distinguir entre três classes principais:
+        O sistema foi treinado com dados fotométricos do SDSS em conjunto com o catálogo WISE, permitindo distinguir entre três classes principais:
+      </p>
 
-          ⭐ Estrelas (STAR)
-          🌌 Galáxias (GALAXY)
-          ✨ Quasares (QSO)
-        </p>
-
-        <h3>⚙️ Como funciona</h3>
-        <p>
-          O modelo utiliza parâmetros observacionais, como magnitudes em diferentes bandas espectrais (u, g, r, i, z) e dados infravermelhos (W1–W4), para realizar a classificação.
-          A aplicação permite:
-            <li>manual de dados</li> 
-            <li>Upload de arquivos CSV</li>
-            <li>Uso de um dataset de demonstração</li>
-            <li>Avaliação em lote com cálculo de acurácia</li>
-            <li>Visualização da matriz de confusão</li>
-            <li>Análise gráfica das previsões</li>
-        </p>
-
-        <h3>🧪 Modelo utilizado</h3>
-        <ul>
-        O classificador foi desenvolvido com PyTorch, utilizando uma rede neural totalmente conectada com:
-          <li>Duas camadas ocultas</li>
-          <li>Função de ativação ReLU</li>
-          <li>Dropout para regularização</li>
-        O modelo foi treinado com dados rotulados e alcança alta performance na distinção entre diferentes tipos de objetos celestes.
-        </ul>
-
-        <h3>🚀 Tecnologias utilizadas</h3>
-        <p>
-          <li>Python (Flask, PyTorch, Scikit-learn)</li>
-          <li>JavaScript (Fetch API, Chart.js, PapaParse)</li>
-          <li>HTML5 e CSS3</li>
-          <li>Render (deploy do backend e frontend)</li>
-        </p>
-
-        <h3>🎓 Contexto</h3>
-        <p>
-        Este projeto foi desenvolvido como parte do Trabalho de Conclusão de Curso em Física Computacional, com foco na aplicação de técnicas de aprendizado de máquina em problemas de astrofísica.
-        </p>
-        <h3>🔗 Links</h3>
-        <p>
-         <li>🔗 Frontend: https://astroclassifier-frontend.onrender.com</li> 
-         <li>⚙️ API: https://astroclassifier.onrender.com</li> 
-        </p>
-        
-        <p style="margin-top: 18px; font-size: 0.95rem; color: #9fb3ff;">
-          Projeto desenvolvido por Vanessa Gomes — Física Computacional (UFF)
-        </p>
-      </section>
+      <ul>
+        <li>⭐ Estrelas (STAR)</li>
+        <li>🌌 Galáxias (GALAXY)</li>
+        <li>✨ Quasares (QSO)</li>
+      </ul>
     </div>
+
+    <div class="bloco">
+      <h3>⚙️ Como funciona</h3>
+      <p>
+        O modelo utiliza magnitudes (u, g, r, i, z) e dados infravermelhos (W1–W4).
+      </p>
+
+      <ul>
+        <li>Entrada manual de dados</li>
+        <li>Upload de CSV</li>
+        <li>Dataset de demonstração</li>
+        <li>Avaliação em lote</li>
+        <li>Matriz de confusão</li>
+        <li>Gráficos das previsões</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h3>🧪 Modelo utilizado</h3>
+      <p>Rede neural em PyTorch com:</p>
+
+      <ul>
+        <li>Duas camadas ocultas</li>
+        <li>Função ReLU</li>
+        <li>Dropout</li>
+      </ul>
+
+      <p>
+        Treinado com dados rotulados e alta performance na distinção entre classes.
+      </p>
+    </div>
+
+    <div class="bloco">
+      <h3>🚀 Tecnologias</h3>
+      <ul>
+        <li>Python (Flask, PyTorch)</li>
+        <li>JavaScript (Chart.js, PapaParse)</li>
+        <li>HTML e CSS</li>
+        <li>Render (deploy)</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h3>🎓 Contexto</h3>
+      <p>
+        Projeto desenvolvido como TCC em Física Computacional (UFF), aplicando Machine Learning à astrofísica.
+      </p>
+    </div>
+
+    <div class="bloco">
+      <h3>🔗 Links</h3>
+      <ul>
+        <li><a href="https://astroclassifier-frontend.onrender.com" target="_blank">Frontend</a></li>
+        <li><a href="https://astroclassifier.onrender.com" target="_blank">API</a></li>
+      </ul>
+    </div>
+
+    <p class="autor">
+      Projeto desenvolvido por Vanessa Gomes — Física Computacional (UFF)
+    </p>
+
+  </section>
+</div>
 
     <!-- SEÇÃO MODELO -->
     <div id="secao-modelo">
