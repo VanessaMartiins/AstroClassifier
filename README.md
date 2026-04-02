@@ -119,7 +119,8 @@ cd AstroClassifier/backend
 pip install -r requirements.txt
 python app.py
 
-**### 🔹 Frontend**
+### 🔹 Frontend
+
 Abra:
 frontend/index.html
 
