@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroClassifier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <h1>🌌 AstroClassifier</h1>
+    <p>Classificação de objetos astronômicos com rede neural</p>
+
+    <div class="menu-topo">
+      <button onclick="mostrarSecao('modelo')">🔬 Modelo</button>
+      <button onclick="mostrarSecao('sobre')">📘 Sobre</button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- SEÇÃO SOBRE -->
+    <div id="secao-sobre" style="display: none;">
+      <section class="painel">
+        <h2>📘 Sobre o Projeto</h2>
+
+        <p>
+          O <strong>AstroClassifier</strong> é uma aplicação de Machine Learning desenvolvida para classificar
+          objetos astronômicos em estrelas, galáxias e quasares, utilizando dados reais.
+        </p>
+
+        <h3>🔭 Objetivo</h3>
+        <p>
+          Aplicar redes neurais para identificar padrões em dados astronômicos e automatizar a classificação
+          de objetos celestes.
+        </p>
+
+        <h3>⚙️ Funcionamento</h3>
+        <ul>
+          <li>Dados reais (SDSS + WISE)</li>
+          <li>Rede neural em Python</li>
+          <li>Normalização com StandardScaler</li>
+          <li>Tratamento de dados faltantes com média</li>
+          <li>Backend Flask + frontend interativo</li>
+        </ul>
+
+        <h3>📊 Avaliação</h3>
+        <p>
+          O modelo pode ser testado individualmente ou em lote, com cálculo de acurácia baseado em amostragem aleatória.
+        </p>
+
+        <h3>🌌 Importância</h3>
+        <p>
+          Com grandes volumes de dados na astronomia moderna, técnicas de Machine Learning permitem acelerar
+          análises e apoiar descobertas científicas.
+        </p>
+
+        <p style="margin-top: 18px; font-size: 0.95rem; color: #9fb3ff;">
+          Projeto desenvolvido por Vanessa Gomes — Física Computacional (UFF)
+        </p>
+      </section>
+    </div>
+
+    <!-- SEÇÃO MODELO -->
+    <div id="secao-modelo">
+      <section class="painel destaque">
+        <h2>Teste interativo do modelo</h2>
+        <p>Preencha manualmente, carregue um exemplo ou use um CSV real para testar o classificador.</p>
+      </section>
+
+      <section class="painel">
+        <h2>Entrada de dados</h2>
+
+        <div class="acoes">
+            <button type="button" onclick="carregarExemplo()">Carregar exemplo</button>
+            <button type="button" onclick="resetarAnalise()">Resetar análise</button>
+        </div>
+
+        <div class="upload-box">
+          <label for="csvFile"><strong>Selecionar arquivo CSV</strong></label>
+          <input type="file" id="csvFile" accept=".csv">
+          <button type="button" onclick="carregarCSV()">Ler CSV</button>
+        </div>
+
+        <div class="seletores">
+          <label for="linhaSelect"><strong>Escolha uma linha do CSV</strong></label>
+          <select id="linhaSelect">
+            <option value="">Nenhuma linha carregada</option>
+          </select>
+          <button type="button" onclick="preencherLinhaSelecionada()">Preencher com linha selecionada</button>
+        </div>
+
+        <div class="lote-box">
+          <label for="qtdLinhas"><strong>Teste automático em lote</strong></label>
+          <input type="number" id="qtdLinhas" min="1" value="50">
+          <button type="button" onclick="testarLote()">Calcular acurácia</button>
+        </div>
+
+        <form id="form">
+          <div id="campos" class="info-grid"></div>
+          <button type="submit">Classificar</button>
+        </form>
+      </section>
+
+      <section class="painel">
+        <h2>Resultado da classificação</h2>
+        <div id="resultado" class="resultado-box">Nenhuma classificação realizada ainda.</div>
+        <div id="explicacao" class="explicacao-box">A explicação aparecerá aqui.</div>
+      </section>
+
+      <section class="painel">
+        <h2>Avaliação em lote</h2>
+        <div id="metricasLote" class="metricas-grid">
+          <div class="metrica-card">
+            <span class="metrica-label">Total</span>
+            <span id="m-total" class="metrica-valor">0</span>
+          </div>
+          <div class="metrica-card">
+            <span class="metrica-label">Acertos</span>
+            <span id="m-acertos" class="metrica-valor">0</span>
+          </div>
+          <div class="metrica-card">
+            <span class="metrica-label">Erros</span>
+            <span id="m-erros" class="metrica-valor">0</span>
+          </div>
+          <div class="metrica-card destaque-metrica">
+            <span class="metrica-label">Acurácia</span>
+            <span id="m-acuracia" class="metrica-valor">0%</span>
+          </div>
+        </div>
+        <p id="textoLote">Nenhum teste em lote executado ainda.</p>
+      </section>
+    </div>
+
+    <section class="painel">
+  <h2>Matriz de confusão</h2>
+  <p>Linhas = classe real | Colunas = classe prevista</p>
+
+  <div id="matrizConfusao" class="matriz-confusao">
+    <div class="matriz-vazia">Nenhum teste em lote executado ainda.</div>
+  </div>
+</section>
+
+<section class="painel">
+  <h2>Distribuição das previsões</h2>
+  <div class="grafico-box">
+    <canvas id="graficoPizza"></canvas>
+  </div>
+  <div id="infoGrafico" class="info-grafico">
+    Passe o mouse no gráfico para ver detalhes.
+  </div>
+</section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

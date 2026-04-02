@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #081225;
+  color: #f4f7ff;
+  line-height: 1.6;
+}
+
+.topo {
+  text-align: center;
+  padding: 42px 20px;
+  background: linear-gradient(135deg, #0d1b3d, #1d3d7a);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.topo h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.topo p {
+  color: #dce6ff;
+  font-size: 1.05rem;
+}
+
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 28px auto 40px;
+}
+
+.painel {
+  background: #101c3d;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+}
+
+.destaque {
+  border: 1px solid rgba(111, 211, 255, 0.25);
+}
+
+.painel h2 {
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.painel p {
+  color: #d6dff7;
+}
+
+button {
+  background: linear-gradient(135deg, #4d8dff, #67b2ff);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-size: 0.98rem;
+  font-weight: bold;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.acoes,
+.upload-box,
+.seletores,
+.lote-box {
+  margin-bottom: 18px;
+}
+
+.upload-box,
+.seletores,
+.lote-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.upload-box input,
+.seletores select,
+.lote-box input,
+.campo-item input {
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid #1c3268;
+  background: #09142d;
+  color: #f5f7ff;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+}
+
+.campo-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo-item label {
+  font-size: 0.92rem;
+  color: #dce6ff;
+}
+
+.resultado-box,
+.explicacao-box {
+  background: #0a1430;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 12px;
+  border-left: 4px solid #6fd3ff;
+}
+
+.metricas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+}
+
+.metrica-card {
+  background: #0a1430;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(111, 211, 255, 0.15);
+}
+
+.destaque-metrica {
+  border: 1px solid rgba(111, 211, 255, 0.45);
+}
+
+.metrica-label {
+  display: block;
+  color: #bfcdf4;
+  margin-bottom: 8px;
+}
+
+.metrica-valor {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #6fd3ff;
+}
+.sobre h3 {
+  margin-top: 16px;
+  margin-bottom: 6px;
+  color: #6fd3ff;
+}
+
+.sobre p {
+  margin-bottom: 10px;
+  color: #d6dff7;
+}
+
+.sobre ul {
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+
+.sobre li {
+  margin-bottom: 4px;
+}
+.menu-topo {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.menu-topo button {
+  background: transparent;
+  border: 1px solid #6fd3ff;
+  color: #6fd3ff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.menu-topo button:hover {
+  background: #6fd3ff;
+  color: #081225;
+}
+
+.matriz-confusao {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+.tabela-matriz {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0a1430;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tabela-matriz th,
+.tabela-matriz td {
+  border: 1px solid #1c3268;
+  padding: 14px;
+  text-align: center;
+}
+
+.tabela-matriz th {
+  background: #101c3d;
+  color: #dce6ff;
+}
+
+.tabela-matriz td {
+  color: #f5f7ff;
+  font-weight: bold;
+}
+
+.tabela-matriz td.diagonal {
+  background: rgba(111, 211, 255, 0.25);
+  color: #6fd3ff;
+}
+
+.tabela-matriz td.fora-diagonal {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.matriz-vazia {
+  background: #0a1430;
+  border-radius: 12px;
+  padding: 18px;
+  color: #d6dff7;
+}
+
+.grafico-box {
+  width: 320px;
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+.info-grafico {
+  margin-top: 12px;
+  background: #0a1430;
+  border-left: 4px solid #6fd3ff;
+  padding: 14px;
+  border-radius: 10px;
+  color: #dce6ff;
+}
