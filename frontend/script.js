@@ -289,6 +289,54 @@ async function testarLote() {
   }
 }
 
+async function carregarCSVExemplo() {
+  try {
+    const resposta = await fetch("./dados/amostra_sdss_wise.csv");
+    const textoCSV = await resposta.text();
+
+    Papa.parse(textoCSV, {
+      header: true,
+      skipEmptyLines: true,
+      delimiter: ";",
+      complete: function(results) {
+        if (!results.data || results.data.length === 0) {
+          alert("Nenhuma linha válida encontrada no dataset de demonstração.");
+          return;
+        }
+
+        csvData = results.data;
+
+        const linhaSelect = document.getElementById("linhaSelect");
+        linhaSelect.innerHTML = "";
+
+        csvData.forEach((row, index) => {
+          const option = document.createElement("option");
+          option.value = index;
+
+          const classe = row.class ? ` | classe real: ${row.class}` : "";
+          option.textContent = `Linha ${index}${classe}`;
+
+          linhaSelect.appendChild(option);
+        });
+
+        window.linhaSelecionada = null;
+
+        document.getElementById("resultado").innerHTML =
+          `Dataset de demonstração carregado com sucesso. <strong>${csvData.length}</strong> linhas encontradas.`;
+        document.getElementById("explicacao").innerText =
+          "Agora escolha uma linha e clique em 'Preencher com linha selecionada'.";
+      },
+      error: function(error) {
+        console.error("Erro ao ler dataset de demonstração:", error);
+        alert("Erro ao carregar o dataset de demonstração.");
+      }
+    });
+  } catch (erro) {
+    console.error("Erro ao buscar dataset de demonstração:", erro);
+    alert("Não foi possível carregar o dataset de demonstração.");
+  }
+}
+
 function mostrarSecao(secao) {
   const modelo = document.getElementById("secao-modelo");
   const sobre = document.getElementById("secao-sobre");
