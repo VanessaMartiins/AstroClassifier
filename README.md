@@ -1,29 +1,63 @@
 # 🌌 AstroClassifier — Classificador Fotométrico de Objetos Astronômicos
 
-Rede neural supervisionada para a classificação de objetos astronômicos em **GALAXY**, **STAR** e **QSO**, utilizando dados fotométricos do **SDSS-DR16** combinados com observações do **WISE**.
+Aplicação completa (frontend + backend) para classificação automática de objetos astronômicos em **GALAXY**, **STAR** e **QSO**, utilizando Machine Learning com dados do **SDSS-DR16** + **WISE**.
+
+---
+
+## 🌐 Acesse o Projeto
+
+🔗 Frontend: https://astroclassifier-frontend.onrender.com  
+⚙️ API (Backend): https://astroclassifier.onrender.com  
 
 ---
 
 ## 📚 Sobre o Projeto
 
-A distinção entre estrelas, galáxias e quasares a partir apenas de magnitudes fotométricas é um dos principais desafios em Astronomia Observacional devido:
+A distinção entre estrelas, galáxias e quasares a partir de magnitudes fotométricas é um desafio clássico da Astronomia Observacional devido a:
 
-- À enorme quantidade de dados coletados por surveys
-- A limitações instrumentais e efeitos de redshift
-- A baixa separação entre classes em algumas bandas
+- Grande volume de dados  
+- Sobreposição entre classes  
+- Efeitos de redshift  
 
-Este projeto utiliza **aprendizado profundo** para auxiliar nesta tarefa, com um modelo implementado em **PyTorch**, capaz de aprender relações não lineares entre magnitudes multibanda.
+O **AstroClassifier** resolve esse problema utilizando uma rede neural capaz de aprender relações não lineares entre múltiplas bandas espectrais.
+
+---
+
+## 🖥️ Funcionalidades da Aplicação
+
+A aplicação web permite:
+
+- 🔹 Classificação manual de objetos  
+- 🔹 Upload de arquivos CSV  
+- 🔹 Dataset de demonstração integrado  
+- 🔹 Avaliação em lote com cálculo de acurácia  
+- 🔹 Matriz de confusão  
+- 🔹 Visualização gráfica das previsões  
 
 ---
 
 ## 🧠 Arquitetura do Modelo
 
-- Rede Neural Multicamadas (MLP)
-- Função de perda: **Cross-Entropy**
-- Otimizador: **Adam**
-- Normalização das features com **StandardScaler**
-- Dropout para reduzir overfitting
-- Treinamento supervisionado com partição **train/test**
+- Rede Neural Multicamadas (MLP)  
+- Função de perda: **Cross-Entropy**  
+- Otimizador: **Adam**  
+- Normalização com **StandardScaler**  
+- Dropout para regularização  
+
+Implementado em **Python (PyTorch)**
+
+---
+
+## 🏗️ Arquitetura do Sistema
+Frontend (HTML, CSS, JS)
+↓
+Fetch API
+↓
+Backend (Flask + PyTorch)
+↓
+Modelo treinado (.pth)
+
+
 
 ---
 
@@ -34,18 +68,19 @@ Este projeto utiliza **aprendizado profundo** para auxiliar nesta tarefa, com um
 | **SDSS-DR16** | u, g, r, i, z (fotometria PSF) | Base da classificação |
 | **WISE** | W1–W4 (infravermelho) | Melhor separação entre galáxias e QSOs |
 
-Critérios de qualidade:
-- `zWarning = 0` → apenas espectros confiáveis usados como verdade de terreno
-- Cruzamento das fontes pelo `objID`
+Critérios:
+
+- `zWarning = 0` → espectros confiáveis  
+- Crossmatch entre catálogos  
 
 ---
 
 ## 📊 Resultados
 
-- **Acurácia no conjunto de teste:** ~ **93%**
-- Matriz de confusão indica boa separação entre as três classes
-- ROC-AUC próximo de **1.0**
-- Curva de perda estável e baixo overfitting
+- **Acurácia no conjunto de teste:** ~ **93%**  
+- Matriz de confusão indica boa separação entre as três classes  
+- ROC-AUC próximo de **1.0**  
+- Curva de perda estável e baixo overfitting  
 
 > Os resultados estão alinhados com trabalhos recentes de classificação fotométrica utilizando aprendizado profundo.
 
@@ -54,51 +89,65 @@ Critérios de qualidade:
 
 ---
 
-## 🗂 Estrutura Recomendada do Projeto
-
+## 🗂 Estrutura do Projeto
 AstroClassifier/
 │
-├── data/ # Exemplo de dataset de entrada
-├── notebooks/ # Notebooks de análise e experimentos
-├── src/ # Código-fonte do modelo
-│ ├── model.py
-│ ├── train.py
-│ └── utils.py
-├── results/ # Gráficos, métricas e tabelas
-├── requirements.txt # Dependências do projeto
-└── README.md # Este arquivo
-
+├── backend/
+│ ├── app.py
+│ ├── model/
+│ └── requirements.txt
+│
+├── frontend/
+│ ├── index.html
+│ ├── script.js
+│ └── style.css
+│
+├── data/
+├── results/
+├── notebooks/
+└── README.md
 
 ---
 
 ## ▶️ Como Executar
 
+### 🔹 Backend
+
 ```bash
-# Clonar o repositório
 git clone https://github.com/VanessaMartiins/AstroClassifier.git
-cd AstroClassifier
-
-# Instalar dependências
+cd AstroClassifier/backend
 pip install -r requirements.txt
+python app.py
 
-# Treinar o modelo
-python src/train.py
+**### 🔹 Frontend**
+Abra:
+frontend/index.html
+
+☁️ Deploy
+Backend hospedado no Render (Web Service)
+Frontend hospedado no Render (Static Site)
 
 🛠 Tecnologias
-
 Python
-
 PyTorch
+Flask
+Scikit-learn
+Pandas, NumPy
+JavaScript (Fetch API, Chart.js, PapaParse)
+HTML5 + CSS3
+Render
 
-Pandas, NumPy, Matplotlib, Seaborn
+🎓 Contexto Acadêmico
 
-Scikit-Learn
-
-Jupyter Notebook
+Projeto desenvolvido como Trabalho de Conclusão de Curso (TCC) em Física Computacional — UFF.
 
 👩‍🚀 Autora
 
 Vanessa Gomes Martins da Silva
-Estudante de Física Computacional — UFF
-📧 Contato: vanemartiins@gmail.com
-🔗 Portfólio: https://vanessamartins.github.io
+🎓 Física Computacional — UFF
+
+📧 vanemartiins@gmail.com
+
+🔗 https://vanessamartins.github.io
+
+🔗 https://github.com/VanessaMartiins
