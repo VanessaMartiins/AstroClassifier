@@ -3,7 +3,7 @@ let csvData = [];
 window.linhaSelecionada = null;
 let graficoPizza = null;
 
-const API_BASE = "https://astroclassifier-api.onrender.com";
+const API_BASE = "https://astroclassifier.onrender.com";
 
 async function carregarFeatures() {
   try {
