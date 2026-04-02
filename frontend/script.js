@@ -1,10 +1,13 @@
 let features = [];
 let csvData = [];
 window.linhaSelecionada = null;
+let graficoPizza = null;
+
+const API_BASE = "https://astroclassifier-api.onrender.com";
 
 async function carregarFeatures() {
   try {
-    const res = await fetch("http://127.0.0.1:5000/features");
+    const res = await fetch(`${API_BASE}/features`);
 
     if (!res.ok) {
       throw new Error(`Erro HTTP ao buscar features: ${res.status}`);
@@ -40,7 +43,7 @@ async function carregarFeatures() {
     console.error("Erro ao carregar features:", erro);
     document.getElementById("resultado").innerText = "Erro ao carregar features.";
     document.getElementById("explicacao").innerText =
-      "Verifique se o backend está rodando e se a rota /features está funcionando.";
+      "Verifique se o backend está online e se a rota /features está funcionando.";
   }
 }
 
@@ -140,6 +143,7 @@ function carregarCSV() {
     }
   });
 }
+
 function normalizarValor(valor) {
   if (valor === null || valor === undefined) return "";
 
@@ -193,7 +197,7 @@ document.getElementById("form").addEventListener("submit", async (e) => {
       dados[f] = document.getElementById(f).value.trim();
     });
 
-    const res = await fetch("http://127.0.0.1:5000/classificar", {
+    const res = await fetch(`${API_BASE}/classificar`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -251,13 +255,10 @@ async function testarLote() {
 
     const quantidadeFinal = Math.min(qtd, csvData.length);
 
-    // cria uma cópia embaralhada do CSV
     const embaralhado = [...csvData].sort(() => Math.random() - 0.5);
-
-    // pega apenas a quantidade pedida
     const linhasSelecionadas = embaralhado.slice(0, quantidadeFinal);
 
-    const res = await fetch("http://127.0.0.1:5000/classificar_lote", {
+    const res = await fetch(`${API_BASE}/classificar_lote`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -286,11 +287,6 @@ async function testarLote() {
     console.error("Erro no teste em lote:", erro);
     document.getElementById("textoLote").innerText = erro.message;
   }
-}
-function irPara(secao) {
-  document.getElementById(secao).scrollIntoView({
-    behavior: "smooth"
-  });
 }
 
 function mostrarSecao(secao) {
@@ -342,8 +338,6 @@ function renderizarMatrizConfusao(matriz) {
 
   container.innerHTML = html;
 }
-
-let graficoPizza = null;
 
 function renderizarGraficoPizza(matriz) {
   const ctx = document.getElementById("graficoPizza");
@@ -440,9 +434,9 @@ function renderizarGraficoPizza(matriz) {
           const porcentagemOrigem = ((maiorValor / totalDaClasse) * 100).toFixed(2);
 
           if (maiorOrigem === classePrevista) {
-            texto += ` A maior parte dessas previsões foi correta: <strong>${porcentagemOrigem}%<\/strong>.`;
+            texto += ` A maior parte dessas previsões foi correta: <strong>${porcentagemOrigem}%</strong>.`;
           } else {
-            texto += ` A principal confusão foi com objetos reais da classe <strong>${maiorOrigem}<\/strong>, representando <strong>${porcentagemOrigem}%<\/strong> das previsões de ${classePrevista}.`;
+            texto += ` A principal confusão foi com objetos reais da classe <strong>${maiorOrigem}</strong>, representando <strong>${porcentagemOrigem}%</strong> das previsões de ${classePrevista}.`;
           }
         }
 
@@ -455,53 +449,43 @@ function renderizarGraficoPizza(matriz) {
 function resetarAnalise() {
   window.linhaSelecionada = null;
 
-  // limpa inputs das features
   features.forEach(f => {
     const campo = document.getElementById(f);
     if (campo) campo.value = "";
   });
 
-  // limpa arquivo CSV selecionado
   const csvFile = document.getElementById("csvFile");
   if (csvFile) csvFile.value = "";
 
-  // limpa dados carregados
   csvData = [];
 
-  // reseta seletor de linha
   const linhaSelect = document.getElementById("linhaSelect");
   if (linhaSelect) {
     linhaSelect.innerHTML = `<option value="">Nenhuma linha carregada</option>`;
   }
 
-  // reseta quantidade do lote
   const qtdLinhas = document.getElementById("qtdLinhas");
   if (qtdLinhas) qtdLinhas.value = 50;
 
-  // limpa resultados individuais
   document.getElementById("resultado").innerHTML = "Nenhuma classificação realizada ainda.";
   document.getElementById("explicacao").innerHTML = "A explicação aparecerá aqui.";
 
-  // limpa métricas do lote
   document.getElementById("m-total").innerText = "0";
   document.getElementById("m-acertos").innerText = "0";
   document.getElementById("m-erros").innerText = "0";
   document.getElementById("m-acuracia").innerText = "0%";
   document.getElementById("textoLote").innerText = "Nenhum teste em lote executado ainda.";
 
-  // limpa matriz
   const matriz = document.getElementById("matrizConfusao");
   if (matriz) {
     matriz.innerHTML = `<div class="matriz-vazia">Nenhum teste em lote executado ainda.</div>`;
   }
 
-  // limpa caixa do gráfico
   const infoGrafico = document.getElementById("infoGrafico");
   if (infoGrafico) {
     infoGrafico.innerHTML = "Passe o mouse no gráfico para ver detalhes.";
   }
 
-  // destrói gráfico de pizza
   if (graficoPizza) {
     graficoPizza.destroy();
     graficoPizza = null;

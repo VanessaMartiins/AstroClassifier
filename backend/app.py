@@ -23,7 +23,12 @@ class AstroClassifier(nn.Module):
 
 
 app = Flask(__name__)
-CORS(app)
+
+CORS(
+    app,
+    resources={r"/*": {"origins": "*"}},
+    supports_credentials=False
+)
 
 MODEL_DIR = "model"
 
@@ -205,4 +210,5 @@ def classificar_lote():
     })
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
