@@ -26,36 +26,54 @@
         <h2>📘 Sobre o Projeto</h2>
 
         <p>
-          O <strong>AstroClassifier</strong> é uma aplicação de Machine Learning desenvolvida para classificar
-          objetos astronômicos em estrelas, galáxias e quasares, utilizando dados reais.
+        <h3>🧠 AstroClassifier</h3>
+        O <strong>AstroClassifier</strong> é uma aplicação web desenvolvida para a classificação automática de objetos astronômicos utilizando técnicas de Machine Learning.
+        O sistema foi treinado com dados fotométricos provenientes do Sloan Digital Sky Survey (SDSS) em conjunto com o catálogo WISE, permitindo distinguir entre três classes principais:
+
+          ⭐ Estrelas (STAR)
+          🌌 Galáxias (GALAXY)
+          ✨ Quasares (QSO)
         </p>
 
-        <h3>🔭 Objetivo</h3>
+        <h3>⚙️ Como funciona</h3>
         <p>
-          Aplicar redes neurais para identificar padrões em dados astronômicos e automatizar a classificação
-          de objetos celestes.
+          O modelo utiliza parâmetros observacionais, como magnitudes em diferentes bandas espectrais (u, g, r, i, z) e dados infravermelhos (W1–W4), para realizar a classificação.
+          A aplicação permite:
+            <li>manual de dados</li> 
+            <li>Upload de arquivos CSV</li>
+            <li>Uso de um dataset de demonstração</li>
+            <li>Avaliação em lote com cálculo de acurácia</li>
+            <li>Visualização da matriz de confusão</li>
+            <li>Análise gráfica das previsões</li>
         </p>
 
-        <h3>⚙️ Funcionamento</h3>
+        <h3>🧪 Modelo utilizado</h3>
         <ul>
-          <li>Dados reais (SDSS + WISE)</li>
-          <li>Rede neural em Python</li>
-          <li>Normalização com StandardScaler</li>
-          <li>Tratamento de dados faltantes com média</li>
-          <li>Backend Flask + frontend interativo</li>
+        O classificador foi desenvolvido com PyTorch, utilizando uma rede neural totalmente conectada com:
+          <li>Duas camadas ocultas</li>
+          <li>Função de ativação ReLU</li>
+          <li>Dropout para regularização</li>
+        O modelo foi treinado com dados rotulados e alcança alta performance na distinção entre diferentes tipos de objetos celestes.
         </ul>
 
-        <h3>📊 Avaliação</h3>
+        <h3>🚀 Tecnologias utilizadas</h3>
         <p>
-          O modelo pode ser testado individualmente ou em lote, com cálculo de acurácia baseado em amostragem aleatória.
+          <li>Python (Flask, PyTorch, Scikit-learn)</li>
+          <li>JavaScript (Fetch API, Chart.js, PapaParse)</li>
+          <li>HTML5 e CSS3</li>
+          <li>Render (deploy do backend e frontend)</li>
         </p>
 
-        <h3>🌌 Importância</h3>
+        <h3>🎓 Contexto</h3>
         <p>
-          Com grandes volumes de dados na astronomia moderna, técnicas de Machine Learning permitem acelerar
-          análises e apoiar descobertas científicas.
+        Este projeto foi desenvolvido como parte do Trabalho de Conclusão de Curso em Física Computacional, com foco na aplicação de técnicas de aprendizado de máquina em problemas de astrofísica.
         </p>
-
+        <h3>🔗 Links</h3>
+        <p>
+         <li>🔗 Frontend: https://astroclassifier-frontend.onrender.com</li> 
+         <li>⚙️ API: https://astroclassifier.onrender.com</li> 
+        </p>
+        
         <p style="margin-top: 18px; font-size: 0.95rem; color: #9fb3ff;">
           Projeto desenvolvido por Vanessa Gomes — Física Computacional (UFF)
         </p>
@@ -102,6 +120,25 @@
           <div id="campos" class="info-grid"></div>
           <button type="submit">Classificar</button>
         </form>
+
+           <section class="painel">
+  <h2>Matriz de confusão</h2>
+  <p>Linhas = classe real | Colunas = classe prevista</p>
+
+  <div id="matrizConfusao" class="matriz-confusao">
+    <div class="matriz-vazia">Nenhum teste em lote executado ainda.</div>
+  </div>
+</section>
+
+<section class="painel">
+  <h2>Distribuição das previsões</h2>
+  <div class="grafico-box">
+    <canvas id="graficoPizza"></canvas>
+  </div>
+  <div id="infoGrafico" class="info-grafico">
+    Passe o mouse no gráfico para ver detalhes.
+  </div>
+</section>
       </section>
 
       <section class="painel">
@@ -133,25 +170,6 @@
         <p id="textoLote">Nenhum teste em lote executado ainda.</p>
       </section>
     </div>
-
-    <section class="painel">
-  <h2>Matriz de confusão</h2>
-  <p>Linhas = classe real | Colunas = classe prevista</p>
-
-  <div id="matrizConfusao" class="matriz-confusao">
-    <div class="matriz-vazia">Nenhum teste em lote executado ainda.</div>
-  </div>
-</section>
-
-<section class="painel">
-  <h2>Distribuição das previsões</h2>
-  <div class="grafico-box">
-    <canvas id="graficoPizza"></canvas>
-  </div>
-  <div id="infoGrafico" class="info-grafico">
-    Passe o mouse no gráfico para ver detalhes.
-  </div>
-</section>
 
   </main>
 
