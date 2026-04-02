@@ -113,13 +113,14 @@ AstroClassifier/
 
 ### 🔹 Backend
 
-```bash
+```markdown
 git clone https://github.com/VanessaMartiins/AstroClassifier.git
 cd AstroClassifier/backend
 pip install -r requirements.txt
 python app.py
 
-### 🔹 Frontend
+
+🔹 Frontend
 
 Abra:
 frontend/index.html
