@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagina nao encontrada | AstroClassifier</title>
+  <title>Desafios | AstroClassifier</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,15 +20,25 @@
   <main class="page">
     <section class="section">
       <div class="section-header">
-        <p class="eyebrow">404</p>
-        <h1>Pagina fora de orbita</h1>
-        <p>O endereco acessado nao foi encontrado neste projeto.</p>
+        <p class="eyebrow">Quiz</p>
+        <h1>Voce consegue pensar como o classificador?</h1>
+        <p>Analise as magnitudes e o redshift de cada objeto. Depois escolha STAR, GALAXY ou QSO e compare sua intuicao com o gabarito.</p>
       </div>
-      <a class="button" href="index.html">Voltar ao inicio</a>
+      <div class="quiz-layout">
+        <aside class="card">
+          <div class="card-body">
+            <h3>Placar</h3>
+            <div class="quiz-meta"><span data-progress>Carregando</span><span data-score>Pontuacao: 0</span></div>
+            <button class="button ghost" type="button" data-next hidden>Proximo objeto</button>
+          </div>
+        </aside>
+        <section data-quiz></section>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="footer-inner"><span>AstroClassifier</span><span>Classificacao didatica com dados fotometricos.</span></div></footer>
+  <footer class="site-footer"><div class="footer-inner"><span>AstroClassifier</span><span>Aprender classificando.</span></div></footer>
   <script src="js/main.js"></script>
+  <script src="js/quiz.js"></script>
 </body>
 </html>

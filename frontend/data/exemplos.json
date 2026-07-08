@@ -1,0 +1,116 @@
+[
+  {
+    "id": "sdss-star-0142",
+    "nome": "Objeto SDSS-0142",
+    "tipo": "STAR",
+    "classePrevista": "STAR",
+    "confianca": 96,
+    "distancia": "aparenta estar na Via Lactea",
+    "dados": {
+      "u": 18.42,
+      "g": 17.13,
+      "r": 16.72,
+      "i": 16.58,
+      "z": 16.51,
+      "w1": 15.94,
+      "w2": 15.88,
+      "redshift": 0.0003
+    },
+    "explicacao": "O brilho muda pouco entre as bandas vermelhas e infravermelhas, e o redshift e praticamente zero. Esse padrao combina com uma estrela da nossa galaxia."
+  },
+  {
+    "id": "sdss-galaxy-2088",
+    "nome": "Objeto SDSS-2088",
+    "tipo": "GALAXY",
+    "classePrevista": "GALAXY",
+    "confianca": 91,
+    "distancia": "milhoes de anos-luz",
+    "dados": {
+      "u": 21.14,
+      "g": 19.62,
+      "r": 18.76,
+      "i": 18.32,
+      "z": 18.04,
+      "w1": 16.91,
+      "w2": 16.62,
+      "redshift": 0.118
+    },
+    "explicacao": "A luz fica mais intensa nas bandas vermelhas e o redshift indica que o objeto esta distante. Essa combinacao e tipica de galaxias observadas em grandes levantamentos."
+  },
+  {
+    "id": "sdss-qso-7301",
+    "nome": "Objeto SDSS-7301",
+    "tipo": "QSO",
+    "classePrevista": "QSO",
+    "confianca": 88,
+    "distancia": "muito distante",
+    "dados": {
+      "u": 20.08,
+      "g": 19.84,
+      "r": 19.51,
+      "i": 19.12,
+      "z": 18.79,
+      "w1": 15.81,
+      "w2": 14.93,
+      "redshift": 1.742
+    },
+    "explicacao": "O redshift alto e o brilho forte no infravermelho sugerem um nucleo galactico ativo muito distante. Por isso o modelo aponta QSO, um quasar."
+  },
+  {
+    "id": "sdss-star-5520",
+    "nome": "Objeto SDSS-5520",
+    "tipo": "STAR",
+    "classePrevista": "STAR",
+    "confianca": 93,
+    "distancia": "dentro da Via Lactea",
+    "dados": {
+      "u": 19.71,
+      "g": 18.27,
+      "r": 17.59,
+      "i": 17.31,
+      "z": 17.18,
+      "w1": 16.77,
+      "w2": 16.74,
+      "redshift": 0.0001
+    },
+    "explicacao": "As cores sao coerentes com um objeto pontual e o redshift praticamente nulo reforca a classificacao como estrela."
+  },
+  {
+    "id": "sdss-galaxy-8840",
+    "nome": "Objeto SDSS-8840",
+    "tipo": "GALAXY",
+    "classePrevista": "GALAXY",
+    "confianca": 84,
+    "distancia": "distante da Via Lactea",
+    "dados": {
+      "u": 22.02,
+      "g": 20.55,
+      "r": 19.33,
+      "i": 18.91,
+      "z": 18.66,
+      "w1": 17.28,
+      "w2": 17.07,
+      "redshift": 0.264
+    },
+    "explicacao": "A queda gradual de magnitude entre filtros e o redshift moderado indicam luz de muitas estrelas reunidas em uma galaxia distante."
+  },
+  {
+    "id": "sdss-qso-4916",
+    "nome": "Objeto SDSS-4916",
+    "tipo": "QSO",
+    "classePrevista": "QSO",
+    "confianca": 79,
+    "distancia": "bilhoes de anos-luz",
+    "dados": {
+      "u": 19.55,
+      "g": 19.77,
+      "r": 19.45,
+      "i": 18.94,
+      "z": 18.41,
+      "w1": 15.23,
+      "w2": 14.18,
+      "redshift": 2.381
+    },
+    "explicacao": "A assinatura no infravermelho e o redshift muito alto deixam o objeto mais parecido com um quasar do que com uma estrela comum."
+  }
+]

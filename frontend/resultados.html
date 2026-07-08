@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados | AstroClassifier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegacao principal">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>AstroClassifier</span></a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a><a href="sobre.html">Sobre</a><a href="experimente.html">Experimente</a><a href="desafios.html">Desafios</a><a href="resultados.html">Resultados</a><a href="tecnologia.html">Tecnologia</a><a href="contato.html">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Resultados do modelo</p>
+        <h1>Graficos para entender o desempenho</h1>
+        <p>Esta pagina referencia os graficos do projeto em assets/graficos. Cada visual vem acompanhado de uma leitura em linguagem simples.</p>
+      </div>
+      <div class="graph-grid">
+        <article class="card graph-card">
+          <figure><img data-graph src="assets/graficos/curva_loss.png" alt="Curva de perda do treinamento"></figure>
+          <div class="card-body"><h3>Curva de loss</h3><p>Mostra se o erro do modelo diminuiu durante o treinamento. Quando a curva cai e estabiliza, e sinal de que a rede aprendeu padroes uteis sem ficar oscilando demais.</p></div>
+        </article>
+        <article class="card graph-card">
+          <figure><img data-graph src="assets/graficos/curvas_ROC.png" alt="Curvas ROC por classe"></figure>
+          <div class="card-body"><h3>Curvas ROC</h3><p>Comparam acertos e alarmes falsos. Quanto mais a curva se aproxima do canto superior esquerdo, melhor o modelo separa uma classe das outras.</p></div>
+        </article>
+        <article class="card graph-card">
+          <figure><img data-graph src="assets/graficos/matriz_confusao.png" alt="Matriz de confusao"></figure>
+          <div class="card-body"><h3>Matriz de confusao</h3><p>Funciona como um mapa de acertos e confusoes. A diagonal principal representa previsoes corretas; os demais quadrados mostram onde o modelo se confundiu.</p></div>
+        </article>
+        <article class="card graph-card">
+          <figure><img data-graph src="assets/graficos/importancia_caracteristicas.png" alt="Importancia das caracteristicas"></figure>
+          <div class="card-body"><h3>Importancia das caracteristicas</h3><p>Ajuda a enxergar quais medidas influenciaram mais a decisao. Isso torna o modelo menos misterioso e mais facil de explicar.</p></div>
+        </article>
+        <article class="card graph-card">
+          <figure><img data-graph src="assets/graficos/distribuicao_confianca.png" alt="Distribuicao de confianca das previsoes"></figure>
+          <div class="card-body"><h3>Distribuicao de confianca</h3><p>Mostra como as previsoes se distribuem por nivel de seguranca. Confianca alta nao e garantia absoluta, mas ajuda a priorizar revisoes humanas.</p></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><span>AstroClassifier</span><span>Resultados explicados sem jargao pesado.</span></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

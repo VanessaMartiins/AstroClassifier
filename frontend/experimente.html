@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagina nao encontrada | AstroClassifier</title>
+  <title>Experimente | AstroClassifier</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,15 +20,25 @@
   <main class="page">
     <section class="section">
       <div class="section-header">
-        <p class="eyebrow">404</p>
-        <h1>Pagina fora de orbita</h1>
-        <p>O endereco acessado nao foi encontrado neste projeto.</p>
+        <p class="eyebrow">Demonstracao interativa</p>
+        <h1>Escolha um objeto e veja a IA explicar</h1>
+        <p>Os exemplos abaixo simulam a experiencia do classificador: o usuario escolhe um objeto pronto, observa os dados analisados, a classe prevista, a confianca e uma explicacao simples do resultado.</p>
       </div>
-      <a class="button" href="index.html">Voltar ao inicio</a>
+      <div class="demo-layout">
+        <aside class="card">
+          <div class="card-body">
+            <h3>Objetos prontos</h3>
+            <p class="muted" style="margin-bottom: 16px;">Clique em um exemplo para trocar a analise.</p>
+            <div class="object-list" data-object-list></div>
+          </div>
+        </aside>
+        <section data-object-detail></section>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="footer-inner"><span>AstroClassifier</span><span>Classificacao didatica com dados fotometricos.</span></div></footer>
+  <footer class="site-footer"><div class="footer-inner"><span>AstroClassifier</span><span>Demo baseada em dados fotometricos.</span></div></footer>
   <script src="js/main.js"></script>
+  <script src="js/classifier-demo.js"></script>
 </body>
 </html>

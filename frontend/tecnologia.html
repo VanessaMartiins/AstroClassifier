@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tecnologia | AstroClassifier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegacao principal">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>AstroClassifier</span></a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a><a href="sobre.html">Sobre</a><a href="experimente.html">Experimente</a><a href="desafios.html">Desafios</a><a href="resultados.html">Resultados</a><a href="tecnologia.html">Tecnologia</a><a href="contato.html">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Por dentro</p>
+        <h1>A tecnologia por tras da classificacao</h1>
+        <p>O projeto combina dados astronomicos, preparacao em Python e uma rede neural treinada para reconhecer padroes em medidas fotometricas.</p>
+      </div>
+      <div class="grid three">
+        <article class="card"><div class="card-body"><h3>Python</h3><p>Linguagem usada para organizar dados, treinar modelos, calcular metricas e gerar os graficos de avaliacao.</p></div></article>
+        <article class="card"><div class="card-body"><h3>PyTorch</h3><p>Biblioteca que permite montar e treinar redes neurais, ajustando pesos a partir de exemplos conhecidos.</p></div></article>
+        <article class="card"><div class="card-body"><h3>Rede neural</h3><p>Modelo matematico que aprende combinacoes de entrada, como brilho e redshift, para estimar uma classe de saida.</p></div></article>
+        <article class="card"><div class="card-body"><h3>SDSS</h3><p>Levantamento astronomico que fornece observacoes em filtros opticos, muito usados para estudar objetos do ceu.</p></div></article>
+        <article class="card"><div class="card-body"><h3>WISE</h3><p>Missao que observou o ceu no infravermelho, ajudando a separar objetos com assinaturas termicas diferentes.</p></div></article>
+        <article class="card"><div class="card-body"><h3>Classificacao</h3><p>A saida final resume a previsao em STAR, GALAXY ou QSO, acompanhada de uma confianca estimada.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Fluxo dos dados</h2>
+        <p>Da observacao ate a resposta final, cada etapa transforma medidas brutas em uma decisao mais facil de interpretar.</p>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item"><div><h3>Catalogos astronomicos</h3><p class="muted">SDSS e WISE fornecem medidas de brilho e informacoes associadas aos objetos.</p></div></article>
+        <article class="timeline-item"><div><h3>Preparacao</h3><p class="muted">Os dados sao limpos, organizados e convertidos para uma escala adequada ao treinamento.</p></div></article>
+        <article class="timeline-item"><div><h3>Treinamento</h3><p class="muted">A rede neural compara previsoes com respostas conhecidas e ajusta seus pesos.</p></div></article>
+        <article class="timeline-item"><div><h3>Avaliacao</h3><p class="muted">Metricas e graficos mostram onde o modelo acerta, erra ou fica menos confiante.</p></div></article>
+        <article class="timeline-item"><div><h3>Experiencia didatica</h3><p class="muted">O front-end apresenta exemplos prontos para o publico entender a logica sem instalar ferramentas.</p></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><span>AstroClassifier</span><span>Da tabela ao universo classificavel.</span></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

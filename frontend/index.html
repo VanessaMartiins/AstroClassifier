@@ -3,200 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AstroClassifier</title>
-  <link rel="stylesheet" href="style.css">
+  <title>AstroClassifier | IA para classificar objetos astronomicos</title>
+  <meta name="description" content="AstroClassifier classifica objetos astronomicos em STAR, GALAXY e QSO usando dados fotometricos reais.">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <header class="topo">
-    <h1>🌌 AstroClassifier</h1>
-    <p>Classificação de objetos astronômicos com rede neural</p>
-
-    <div class="menu-topo">
-      <button onclick="mostrarSecao('modelo')">🔬 Modelo</button>
-      <button onclick="mostrarSecao('sobre')">📘 Sobre</button>
-    </div>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegacao principal">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>AstroClassifier</span></a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="experimente.html">Experimente</a>
+        <a href="desafios.html">Desafios</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="tecnologia.html">Tecnologia</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </nav>
   </header>
 
-  <main class="container">
-
-<div id="secao-sobre" style="display: none;">
-  <section class="painel sobre">
-
-    <h2>📘 Sobre o Projeto</h2>
-
-    <div class="bloco">
-      <h3>🧠 AstroClassifier</h3>
-      <p>
-        O <strong>AstroClassifier</strong> é uma aplicação web desenvolvida para a classificação automática de objetos astronômicos utilizando técnicas de Machine Learning.
-        O sistema foi treinado com dados fotométricos do SDSS em conjunto com o catálogo WISE, permitindo distinguir entre três classes principais:
-      </p>
-
-      <ul>
-        <li>⭐ Estrelas (STAR)</li>
-        <li>🌌 Galáxias (GALAXY)</li>
-        <li>✨ Quasares (QSO)</li>
-      </ul>
-    </div>
-
-    <div class="bloco">
-      <h3>⚙️ Como funciona</h3>
-      <p>
-        O modelo utiliza magnitudes (u, g, r, i, z) e dados infravermelhos (W1–W4).
-      </p>
-
-      <ul>
-        <li>Entrada manual de dados</li>
-        <li>Upload de CSV</li>
-        <li>Dataset de demonstração</li>
-        <li>Avaliação em lote</li>
-        <li>Matriz de confusão</li>
-        <li>Gráficos das previsões</li>
-      </ul>
-    </div>
-
-    <div class="bloco">
-      <h3>🧪 Modelo utilizado</h3>
-      <p>Rede neural em Python com:</p>
-
-      <ul>
-        <li>Duas camadas ocultas</li>
-        <li>Função ReLU</li>
-        <li>Dropout</li>
-      </ul>
-
-      <p>
-        Treinado com dados rotulados e alta performance na distinção entre classes.
-      </p>
-    </div>
-
-    <div class="bloco">
-      <h3>🚀 Tecnologias</h3>
-      <ul>
-        <li>Python (Flask, PyTorch)</li>
-        <li>JavaScript (Chart.js, PapaParse)</li>
-        <li>HTML e CSS</li>
-        <li>Render (deploy)</li>
-      </ul>
-    </div>
-
-    <div class="bloco">
-      <h3>🎓 Contexto</h3>
-      <p>
-        Projeto desenvolvido como TCC em Física Computacional (UFF), aplicando Machine Learning à astrofísica.
-      </p>
-    </div>
-
-    <div class="bloco">
-      <h3>🔗 Links</h3>
-      <ul>
-        <li><a href="https://astroclassifier-frontend.onrender.com" target="_blank">Frontend</a></li>
-        <li><a href="https://astroclassifier.onrender.com" target="_blank">API</a></li>
-      </ul>
-    </div>
-
-    <p class="autor">
-      Projeto desenvolvido por Vanessa Gomes — Física Computacional (UFF)
-    </p>
-
-  </section>
-</div>
-
-    <!-- SEÇÃO MODELO -->
-    <div id="secao-modelo">
-      <section class="painel destaque">
-        <h2>Teste interativo do modelo</h2>
-        <p>Preencha manualmente, carregue um exemplo ou use um CSV real para testar o classificador.</p>
-      </section>
-
-      <section class="painel">
-        <h2>Entrada de dados</h2>
-
-        <div class="acoes">
-            <button type="button" onclick="carregarExemplo()">Carregar exemplo</button>
-            <button type="button" onclick="carregarCSVExemplo()">Usar dataset de demonstração</button>
-            <button type="button" onclick="resetarAnalise()">Resetar análise</button>
-        </div>
-
-        <div class="upload-box">
-          <label for="csvFile"><strong>Selecionar arquivo CSV</strong></label>
-          <input type="file" id="csvFile" accept=".csv">
-          <button type="button" onclick="carregarCSV()">Ler CSV</button>
-        </div>
-
-        <div class="seletores">
-          <label for="linhaSelect"><strong>Escolha uma linha do CSV</strong></label>
-          <select id="linhaSelect">
-            <option value="">Nenhuma linha carregada</option>
-          </select>
-          <button type="button" onclick="preencherLinhaSelecionada()">Preencher com linha selecionada</button>
-        </div>
-
-        <div class="lote-box">
-          <label for="qtdLinhas"><strong>Teste automático em lote</strong></label>
-          <input type="number" id="qtdLinhas" min="1" value="50">
-          <button type="button" onclick="testarLote()">Calcular acurácia</button>
-        </div>
-
-        <form id="form">
-          <div id="campos" class="info-grid"></div>
-          <button type="submit">Classificar</button>
-        </form>
-
-           <section class="painel">
-  <h2>Matriz de confusão</h2>
-  <p>Linhas = classe real | Colunas = classe prevista</p>
-
-  <div id="matrizConfusao" class="matriz-confusao">
-    <div class="matriz-vazia">Nenhum teste em lote executado ainda.</div>
-  </div>
-</section>
-
-<section class="painel">
-  <h2>Distribuição das previsões</h2>
-  <div class="grafico-box">
-    <canvas id="graficoPizza"></canvas>
-  </div>
-  <div id="infoGrafico" class="info-grafico">
-    Passe o mouse no gráfico para ver detalhes.
-  </div>
-</section>
-      </section>
-
-      <section class="painel">
-        <h2>Resultado da classificação</h2>
-        <div id="resultado" class="resultado-box">Nenhuma classificação realizada ainda.</div>
-        <div id="explicacao" class="explicacao-box">A explicação aparecerá aqui.</div>
-      </section>
-
-      <section class="painel">
-        <h2>Avaliação em lote</h2>
-        <div id="metricasLote" class="metricas-grid">
-          <div class="metrica-card">
-            <span class="metrica-label">Total</span>
-            <span id="m-total" class="metrica-valor">0</span>
-          </div>
-          <div class="metrica-card">
-            <span class="metrica-label">Acertos</span>
-            <span id="m-acertos" class="metrica-valor">0</span>
-          </div>
-          <div class="metrica-card">
-            <span class="metrica-label">Erros</span>
-            <span id="m-erros" class="metrica-valor">0</span>
-          </div>
-          <div class="metrica-card destaque-metrica">
-            <span class="metrica-label">Acurácia</span>
-            <span id="m-acuracia" class="metrica-valor">0%</span>
+  <main>
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="page">
+        <div class="hero-grid">
+          <p class="eyebrow">Inteligencia artificial + astronomia</p>
+          <h1>AstroClassifier</h1>
+          <p class="lead">Uma inteligencia artificial que classifica objetos astronomicos em <strong>STAR</strong>, <strong>GALAXY</strong> e <strong>QSO</strong> usando dados fotometricos reais, ou seja, medidas de brilho captadas em diferentes filtros de observacao.</p>
+          <div class="actions">
+            <a class="button" href="experimente.html">Testar exemplos</a>
+            <a class="button secondary" href="desafios.html">Jogar quiz</a>
           </div>
         </div>
-        <p id="textoLote">Nenhum teste em lote executado ainda.</p>
-      </section>
-    </div>
+      </div>
+    </section>
 
+    <section class="page section">
+      <div class="section-header">
+        <h2>O ceu traduzido em dados</h2>
+        <p>Em vez de olhar uma foto e tentar reconhecer uma forma, o projeto observa numeros: quanto brilho chega em cada faixa de cor e como esse padrao se compara a objetos ja conhecidos.</p>
+      </div>
+      <div class="grid three">
+        <article class="card"><div class="card-body"><h3>STAR</h3><p>Estrelas proximas aparecem como fontes pontuais e costumam ter redshift quase nulo.</p></div></article>
+        <article class="card"><div class="card-body"><h3>GALAXY</h3><p>Galaxias combinam luz de muitas estrelas e frequentemente mostram cores mais avermelhadas e redshift moderado.</p></div></article>
+        <article class="card"><div class="card-body"><h3>QSO</h3><p>Quasares sao nucleos galacticos muito ativos, geralmente distantes e com assinatura forte no infravermelho.</p></div></article>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><strong>3</strong><span>classes astronomicas</span></div>
+        <div class="stat"><strong>8</strong><span>medidas por exemplo</span></div>
+        <div class="stat"><strong>0</strong><span>upload de imagem nesta versao</span></div>
+      </div>
+    </section>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="footer-inner"><span>AstroClassifier</span><span>Classificacao didatica com dados fotometricos.</span></div>
+  </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>
