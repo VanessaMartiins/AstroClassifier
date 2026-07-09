@@ -49,22 +49,16 @@ if (contactForm) {
 }
 
 async function carregarFooter() {
-  const container = document.getElementById("footer");
 
-  if (!container) {
-    console.error("Elemento #footer não encontrado");
-    return;
-  }
+    alert("Entrou na função");
 
-  const resposta = await fetch("components/footer.html");
+    const resposta = await fetch("components/footer.html");
 
-  if (!resposta.ok) {
-    console.error("Erro ao carregar footer:", resposta.status);
-    return;
-  }
+    alert(resposta.status);
 
-  const html = await resposta.text();
-  container.innerHTML = html;
+    const html = await resposta.text();
+
+    document.getElementById("footer").innerHTML = html;
 }
 
 carregarFooter();
