@@ -47,3 +47,15 @@ if (contactForm) {
     }
   });
 }
+
+async function carregarFooter(){
+
+    const resposta = await fetch("components/footer.html");
+
+    const html = await resposta.text();
+
+    document.getElementById("footer").innerHTML = html;
+
+}
+
+carregarFooter();
