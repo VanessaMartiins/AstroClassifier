@@ -1,4 +1,3 @@
-alert("main.js carregou");
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
@@ -49,14 +48,23 @@ if (contactForm) {
   });
 }
 
-async function carregarFooter(){
+async function carregarFooter() {
+  const container = document.getElementById("footer");
 
-    const resposta = await fetch("components/footer.html");
+  if (!container) {
+    console.error("Elemento #footer não encontrado");
+    return;
+  }
 
-    const html = await resposta.text();
+  const resposta = await fetch("components/footer.html");
 
-    document.getElementById("footer").innerHTML = html;
+  if (!resposta.ok) {
+    console.error("Erro ao carregar footer:", resposta.status);
+    return;
+  }
 
+  const html = await resposta.text();
+  container.innerHTML = html;
 }
 
 carregarFooter();
