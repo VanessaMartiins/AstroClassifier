@@ -4,52 +4,313 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resultados | AstroClassifier</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
   <header class="site-header">
-    <nav class="nav" aria-label="Navegacao principal">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>AstroClassifier</span></a>
-      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AstroClassifier</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="nav-links">
-        <a href="index.html">Inicio</a><a href="sobre.html">Sobre</a><a href="experimente.html">Experimente</a><a href="desafios.html">Desafios</a><a href="resultados.html">Resultados</a><a href="tecnologia.html">Tecnologia</a><a href="contato.html">Contato</a>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="experimente.html">Experimente</a>
+        <a href="desafios.html">Desafios</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="tecnologia.html">Tecnologia</a>
+        <a href="contato.html">Contato</a>
       </div>
     </nav>
   </header>
 
   <main class="page">
+
     <section class="section">
       <div class="section-header">
         <p class="eyebrow">Resultados do modelo</p>
-        <h1>Graficos para entender o desempenho</h1>
-        <p>Esta pagina referencia os graficos do projeto em assets/graficos. Cada visual vem acompanhado de uma leitura em linguagem simples.</p>
+
+        <h1>O que a rede aprendeu?</h1>
+
+        <p>
+          A versão final apresentada aqui foi treinada com 10.000 objetos
+          astronômicos e utiliza 20 características relacionadas às magnitudes
+          fotométricas do SDSS e do WISE, além do redshift.
+        </p>
+
+        <p>
+          A avaliação foi realizada em um conjunto de teste separado, com
+          2.000 objetos que não participaram do treinamento.
+        </p>
       </div>
-      <div class="graph-grid">
-        <article class="card graph-card">
-          <figure><img data-graph src="assets/graficos/curva_loss.png" alt="Curva de perda do treinamento"></figure>
-          <div class="card-body"><h3>Curva de loss</h3><p>Mostra se o erro do modelo diminuiu durante o treinamento. Quando a curva cai e estabiliza, e sinal de que a rede aprendeu padroes uteis sem ficar oscilando demais.</p></div>
+
+      <div class="stats-grid">
+        <article class="card">
+          <div class="card-body">
+            <p class="eyebrow">Acurácia</p>
+            <h2>90,20%</h2>
+            <p>
+              Percentual de objetos classificados corretamente no conjunto
+              de teste.
+            </p>
+          </div>
         </article>
-        <article class="card graph-card">
-          <figure><img data-graph src="assets/graficos/curvas_ROC.png" alt="Curvas ROC por classe"></figure>
-          <div class="card-body"><h3>Curvas ROC</h3><p>Comparam acertos e alarmes falsos. Quanto mais a curva se aproxima do canto superior esquerdo, melhor o modelo separa uma classe das outras.</p></div>
+
+        <article class="card">
+          <div class="card-body">
+            <p class="eyebrow">Amostras de teste</p>
+            <h2>2.000</h2>
+            <p>
+              Objetos usados exclusivamente para avaliar o desempenho da rede.
+            </p>
+          </div>
         </article>
-        <article class="card graph-card">
-          <figure><img data-graph src="assets/graficos/matriz_confusao.png" alt="Matriz de confusao"></figure>
-          <div class="card-body"><h3>Matriz de confusao</h3><p>Funciona como um mapa de acertos e confusoes. A diagonal principal representa previsoes corretas; os demais quadrados mostram onde o modelo se confundiu.</p></div>
-        </article>
-        <article class="card graph-card">
-          <figure><img data-graph src="assets/graficos/importancia_caracteristicas.png" alt="Importancia das caracteristicas"></figure>
-          <div class="card-body"><h3>Importancia das caracteristicas</h3><p>Ajuda a enxergar quais medidas influenciaram mais a decisao. Isso torna o modelo menos misterioso e mais facil de explicar.</p></div>
-        </article>
-        <article class="card graph-card">
-          <figure><img data-graph src="assets/graficos/distribuicao_confianca.png" alt="Distribuicao de confianca das previsoes"></figure>
-          <div class="card-body"><h3>Distribuicao de confianca</h3><p>Mostra como as previsoes se distribuem por nivel de seguranca. Confianca alta nao e garantia absoluta, mas ajuda a priorizar revisoes humanas.</p></div>
+
+        <article class="card">
+          <div class="card-body">
+            <p class="eyebrow">Classes</p>
+            <h2>3</h2>
+            <p>
+              GALAXY, QSO e STAR.
+            </p>
+          </div>
         </article>
       </div>
     </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">01 · Treinamento</p>
+
+        <h2>A rede reduziu progressivamente o erro</h2>
+
+        <p>
+          Durante as 20 épocas de treinamento, a função de perda diminuiu de
+          aproximadamente 0,72 para 0,26. Essa redução mostra que a rede foi
+          ajustando seus parâmetros para representar melhor os padrões presentes
+          nos dados de treinamento.
+        </p>
+      </div>
+
+      <article class="card graph-card">
+        <figure>
+          <img
+            data-graph
+            src="assets/graficos/curva_loss.png"
+            alt="Curva de perda durante as 20 épocas de treinamento"
+          >
+        </figure>
+
+        <div class="card-body">
+          <h3>Curva de loss</h3>
+
+          <p>
+            A queda da loss mostra a evolução do aprendizado ao longo das épocas.
+            Como este gráfico representa apenas a perda de treinamento, ele deve
+            ser interpretado em conjunto com as métricas obtidas no conjunto de
+            teste.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">02 · Separação entre classes</p>
+
+        <h2>O modelo apresentou alta capacidade de discriminação</h2>
+
+        <p>
+          As curvas ROC avaliam o quanto o modelo consegue separar cada classe
+          das demais em diferentes limiares de decisão.
+        </p>
+      </div>
+
+      <article class="card graph-card">
+        <figure>
+          <img
+            data-graph
+            src="assets/graficos/curvas_ROC.png"
+            alt="Curvas ROC para as classes GALAXY, QSO e STAR"
+          >
+        </figure>
+
+        <div class="card-body">
+          <h3>Curvas ROC e AUC</h3>
+
+          <p>
+            Os valores de AUC foram 0,961 para GALAXY, 0,994 para QSO
+            e 0,957 para STAR. Valores próximos de 1 indicam maior capacidade
+            de distinguir uma classe das demais.
+          </p>
+
+          <p>
+            Entre as três classes, QSO apresentou o maior valor de AUC nesta
+            execução.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">03 · Onde o modelo acerta e se confunde</p>
+
+        <h2>A matriz de confusão revela diferenças entre as classes</h2>
+
+        <p>
+          A acurácia global resume o desempenho em um único número, mas a matriz
+          de confusão permite observar quais tipos de objeto foram mais fáceis
+          ou mais difíceis de classificar.
+        </p>
+      </div>
+
+      <article class="card graph-card">
+        <figure>
+          <img
+            data-graph
+            src="assets/graficos/matriz_confusao.png"
+            alt="Matriz de confusão da classificação de objetos astronômicos"
+          >
+        </figure>
+
+        <div class="card-body">
+          <h3>Matriz de confusão</h3>
+
+          <p>
+            Das 1.380 galáxias presentes no conjunto de teste, 1.308 foram
+            classificadas corretamente. Entre os 217 quasares, 193 receberam
+            a classificação correta. Para estrelas, foram 303 acertos entre
+            403 objetos.
+          </p>
+
+          <p>
+            A principal confusão ocorreu entre STAR e GALAXY: 94 estrelas foram
+            classificadas como galáxias. Esse comportamento mostra que o
+            desempenho do modelo não é uniforme entre todas as classes.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">04 · Características mais influentes</p>
+
+        <h2>O infravermelho teve um papel importante na classificação</h2>
+
+        <p>
+          Para investigar a influência das entradas, foi utilizada uma análise
+          por permutação no conjunto de teste. Cada característica foi embaralhada
+          individualmente e foi medida a queda provocada na acurácia.
+        </p>
+      </div>
+
+      <article class="card graph-card">
+        <figure>
+          <img
+            data-graph
+            src="assets/graficos/importancia_caracteristicas.png"
+            alt="Impacto das características na acurácia do modelo"
+          >
+        </figure>
+
+        <div class="card-body">
+          <h3>Importância por permutação</h3>
+
+          <p>
+            As maiores quedas ocorreram ao embaralhar as bandas infravermelhas
+            W1 e W2 do WISE, com reduções de aproximadamente 47,1 e 40,6 pontos
+            percentuais na acurácia.
+          </p>
+
+          <p>
+            O redshift também apresentou influência relevante, com queda de
+            aproximadamente 17,5 pontos percentuais. Isso indica que essas
+            variáveis carregam informações particularmente úteis para a
+            classificação realizada pela rede.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">05 · Probabilidades previstas</p>
+
+        <h2>Nem toda previsão recebe o mesmo grau de separação</h2>
+
+        <p>
+          A rede produz uma distribuição de probabilidades entre as três classes.
+          O gráfico abaixo mostra, para cada objeto, a maior probabilidade prevista.
+        </p>
+      </div>
+
+      <article class="card graph-card">
+        <figure>
+          <img
+            data-graph
+            src="assets/graficos/distribuicao_confianca.png"
+            alt="Distribuição da maior probabilidade prevista pelo modelo"
+          >
+        </figure>
+
+        <div class="card-body">
+          <h3>Distribuição das probabilidades</h3>
+
+          <p>
+            Grande parte dos objetos recebeu uma probabilidade máxima elevada,
+            embora também existam previsões em regiões de menor separação entre
+            as classes.
+          </p>
+
+          <p>
+            Essa probabilidade não deve ser interpretada como garantia absoluta
+            de acerto. Ela representa a saída produzida pelo modelo e não uma
+            medida independente de certeza ou calibração.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Interpretação</p>
+
+        <h2>Um bom resultado não significa um modelo perfeito</h2>
+
+        <p>
+          A rede alcançou 90,20% de acurácia no conjunto de teste e apresentou
+          alta capacidade de separação entre as três classes. Ao mesmo tempo,
+          a análise por classe mostra que ainda existem regiões de confusão,
+          principalmente entre estrelas e galáxias.
+        </p>
+
+        <p>
+          Esses resultados ajudam a entender tanto o potencial quanto as
+          limitações da aplicação de redes neurais à classificação de objetos
+          astronômicos.
+        </p>
+      </div>
+    </section>
+
   </main>
 
   <div id="footer"></div>
-  <script src="js/main.js"></script>
+
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

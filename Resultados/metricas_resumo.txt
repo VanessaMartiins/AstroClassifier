@@ -1,0 +1,13 @@
+Acurácia: 90.20%
+Amostras de teste: 2000
+Classes: GALAXY, QSO, STAR
+
+AUC por classe:
+GALAXY: 0.9614
+QSO: 0.9943
+STAR: 0.9569
+
+Matriz de confusão:
+[[1308   11   61]
+ [  22  193    2]
+ [  94    6  303]]

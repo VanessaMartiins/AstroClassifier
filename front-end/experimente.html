@@ -3,16 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Experimente | AstroClassifier</title>
-  <link rel="stylesheet" href="css/style.css">
+
+  <meta
+    name="description"
+    content="Explore uma demonstração didática do AstroClassifier com exemplos de estrelas, galáxias e quasares."
+  >
+
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
+
 <body>
   <header class="site-header">
-    <nav class="nav" aria-label="Navegacao principal">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>AstroClassifier</span></a>
-      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AstroClassifier</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="nav-links">
-        <a href="index.html">Inicio</a><a href="sobre.html">Sobre</a><a href="experimente.html">Experimente</a><a href="desafios.html">Desafios</a><a href="resultados.html">Resultados</a><a href="tecnologia.html">Tecnologia</a><a href="contato.html">Contato</a>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="experimente.html">Experimente</a>
+        <a href="desafios.html">Desafios</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="tecnologia.html">Tecnologia</a>
+        <a href="contato.html">Contato</a>
       </div>
     </nav>
   </header>
@@ -20,25 +48,51 @@
   <main class="page">
     <section class="section">
       <div class="section-header">
-        <p class="eyebrow">Demonstracao interativa</p>
-        <h1>Escolha um objeto e veja a IA explicar</h1>
-        <p>Os exemplos abaixo simulam a experiencia do classificador: o usuario escolhe um objeto pronto, observa os dados analisados, a classe prevista, a confianca e uma explicacao simples do resultado.</p>
+        <p class="eyebrow">Demonstração interativa</p>
+
+        <h1>Explore como uma classificação pode ser interpretada</h1>
+
+        <p>
+          Esta página utiliza exemplos didáticos pré-definidos para apresentar,
+          de forma simplificada, como padrões fotométricos podem ser associados
+          às classes STAR, GALAXY e QSO.
+        </p>
+
+        <p>
+          Escolha um exemplo para observar algumas das características exibidas,
+          a classe associada e uma explicação didática do padrão apresentado.
+        </p>
       </div>
+
+      <div class="demo-notice">
+        <strong>Importante:</strong>
+        esta demonstração não executa a rede neural em tempo real.
+        Os exemplos e resultados apresentados nesta página são ilustrativos.
+        O modelo completo utiliza um conjunto maior de características durante
+        a classificação.
+      </div>
+
       <div class="demo-layout">
         <aside class="card">
           <div class="card-body">
-            <h3>Objetos prontos</h3>
-            <p class="muted" style="margin-bottom: 16px;">Clique em um exemplo para trocar a analise.</p>
+            <h3>Exemplos didáticos</h3>
+
+            <p class="muted" style="margin-bottom: 16px;">
+              Clique em um exemplo para explorar a análise.
+            </p>
+
             <div class="object-list" data-object-list></div>
           </div>
         </aside>
+
         <section data-object-detail></section>
       </div>
     </section>
   </main>
 
   <div id="footer"></div>
-  <script src="js/main.js"></script>
-  <script src="js/classifier-demo.js"></script>
+
+  <script src="js/main.js?v=2"></script>
+  <script src="js/classifier-demo.js?v=2"></script>
 </body>
 </html>

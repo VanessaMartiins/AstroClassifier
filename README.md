@@ -77,7 +77,7 @@ Critérios:
 
 ## 📊 Resultados
 
-- **Acurácia no conjunto de teste:** ~ **93%**  
+- **Acurácia no conjunto de teste:** ~ **90,20%**  
 - Matriz de confusão indica boa separação entre as três classes  
 - ROC-AUC próximo de **1.0**  
 - Curva de perda estável e baixo overfitting  

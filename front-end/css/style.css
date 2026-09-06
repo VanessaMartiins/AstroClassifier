@@ -800,3 +800,102 @@ textarea {
 [hidden] {
   display: none !important;
 }
+
+/* =========================================================
+   AVISO DA DEMONSTRAÇÃO
+   ========================================================= */
+
+.demo-notice {
+  margin: 0 0 28px;
+  padding: 16px 18px;
+
+  border: 1px solid rgba(255, 200, 74, 0.28);
+  border-radius: 10px;
+
+  background: rgba(255, 200, 74, 0.06);
+
+  color: #c7d4ee;
+  line-height: 1.65;
+}
+
+.demo-notice strong {
+  color: #ffc84a;
+}
+
+/* Resultados */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.stats-grid .card {
+  min-width: 0;
+}
+
+.stats-grid .card-body {
+  padding: 1.4rem;
+}
+
+.stats-grid h2 {
+  margin: 0.45rem 0 0.25rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.graph-card {
+  overflow: hidden;
+}
+
+.graph-card figure {
+  margin: 0;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.graph-card figure img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .graph-card figure {
+    padding: 0.75rem;
+  }
+
+  .graph-card figure img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+/* Força os cards de resumo da página Resultados em 3 colunas */
+main .stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1rem;
+  width: 100%;
+}
+
+main .stats-grid > .card {
+  width: auto !important;
+  max-width: none !important;
+  grid-column: auto !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 800px) {
+  main .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
