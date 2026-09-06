@@ -657,3 +657,92 @@ textarea {
     width: 100%;
   }
 }
+/* =========================================================
+   COMO FUNCIONA
+   ========================================================= */
+
+.how-it-works-header {
+  margin-top: 72px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.process-card {
+  position: relative;
+  padding: 28px 24px;
+  min-height: 220px;
+
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(70, 210, 255, 0.45);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.process-number {
+  display: block;
+  margin-bottom: 24px;
+
+  color: #ffc84a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.process-card h3 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+  font-size: 1.15rem;
+}
+
+.process-card p {
+  margin: 0;
+
+  color: #b8c7e6;
+  line-height: 1.65;
+}
+
+.section-actions {
+  margin-top: 28px;
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* Celular */
+
+@media (max-width: 600px) {
+  .how-it-works-header {
+    margin-top: 52px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card {
+    min-height: auto;
+  }
+}
