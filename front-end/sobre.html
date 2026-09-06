@@ -3,45 +3,236 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Sobre | AstroClassifier</title>
-  <link rel="stylesheet" href="css/style.css">
+
+  <meta
+    name="description"
+    content="Conheça a origem do AstroClassifier, um projeto de Física Computacional que usa redes neurais para classificar objetos astronômicos."
+  >
+
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
+
 <body>
   <header class="site-header">
-    <nav class="nav" aria-label="Navegacao principal">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>AstroClassifier</span></a>
-      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AstroClassifier</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="nav-links">
-        <a href="index.html">Inicio</a><a href="sobre.html">Sobre</a><a href="experimente.html">Experimente</a><a href="desafios.html">Desafios</a><a href="resultados.html">Resultados</a><a href="tecnologia.html">Tecnologia</a><a href="contato.html">Contato</a>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="experimente.html">Experimente</a>
+        <a href="desafios.html">Desafios</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="tecnologia.html">Tecnologia</a>
+        <a href="contato.html">Contato</a>
       </div>
     </nav>
   </header>
 
   <main class="page">
+
+    <!-- INTRODUÇÃO -->
     <section class="section">
       <div class="section-header">
         <p class="eyebrow">Sobre o projeto</p>
-        <h1>Uma porta de entrada para IA astronomica</h1>
-        <p>O AstroClassifier foi reformulado como uma experiencia didatica para mostrar como modelos de inteligencia artificial podem aprender padroes do universo a partir de tabelas de observacao.</p>
-      </div>
-      <div class="grid two">
-        <article class="card"><div class="card-body"><h3>O que ele faz</h3><p>Recebe medidas fotometricas de um objeto astronomico e estima se ele se parece mais com uma estrela, uma galaxia ou um quasar.</p></div></article>
-        <article class="card"><div class="card-body"><h3>O que ele nao faz ainda</h3><p>Nesta versao, o projeto nao recebe upload de imagens do ceu. O modelo atual trabalha com dados numericos de brilho, nao com pixels de fotografias.</p></div></article>
+
+        <h1>Uma ponte entre Astronomia e Inteligência Artificial</h1>
+
+        <p>
+          O AstroClassifier nasceu como Trabalho de Conclusão de Curso em
+          Física Computacional, com o objetivo de investigar como redes neurais
+          podem reconhecer padrões em dados astronômicos reais e classificar
+          diferentes tipos de objetos do Universo.
+        </p>
       </div>
     </section>
 
+    <!-- ORIGEM -->
     <section class="section">
       <div class="section-header">
-        <h2>Como pensar nos dados</h2>
-        <p>Cada filtro funciona como uma janela de cor. Ao comparar o brilho em varias janelas, o modelo encontra pistas sobre temperatura, distancia e tipo de fonte luminosa.</p>
-      </div>
-      <div class="pill-row">
-        <span class="pill">u</span><span class="pill">g</span><span class="pill">r</span><span class="pill">i</span><span class="pill">z</span><span class="pill">W1</span><span class="pill">W2</span><span class="pill">redshift</span>
+        <p class="eyebrow">De onde surgiu</p>
+
+        <h2>Da pesquisa acadêmica para uma experiência interativa</h2>
+
+        <p>
+          O projeto foi desenvolvido a partir do estudo de classificação
+          fotométrica de objetos astronômicos. A proposta foi treinar uma rede
+          neural capaz de diferenciar estrelas, galáxias e quasares usando
+          características obtidas a partir de observações astronômicas.
+        </p>
+
+        <p>
+          A versão web transforma essa pesquisa em uma experiência mais
+          acessível, permitindo explorar os dados, entender como o modelo
+          funciona e testar classificações de forma interativa.
+        </p>
       </div>
     </section>
+
+    <!-- O PROBLEMA -->
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">O problema</p>
+
+        <h2>Nem todo ponto brilhante no céu é uma estrela</h2>
+
+        <p>
+          Grandes levantamentos astronômicos registram enormes quantidades de
+          objetos. Entre eles estão estrelas da nossa própria galáxia,
+          galáxias contendo bilhões de estrelas e quasares extremamente
+          luminosos e distantes.
+        </p>
+
+        <p>
+          Classificar esses objetos em larga escala é uma tarefa ideal para
+          técnicas de aprendizado de máquina, capazes de encontrar padrões em
+          grandes conjuntos de dados.
+        </p>
+      </div>
+    </section>
+
+    <!-- O QUE FAZ -->
+    <section class="section">
+      <div class="grid two">
+
+        <article class="card">
+          <div class="card-body">
+            <h3>O que o AstroClassifier faz</h3>
+
+            <p>
+              Recebe características fotométricas de um objeto astronômico e
+              utiliza uma rede neural para estimar se ele pertence à classe
+              STAR, GALAXY ou QSO.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3>O que o modelo não faz</h3>
+
+            <p>
+              O modelo não analisa fotografias ou pixels de imagens do céu.
+              Ele trabalha com dados numéricos obtidos a partir da luz
+              observada em diferentes bandas e outras características do
+              objeto.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- DADOS -->
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Os dados</p>
+
+        <h2>Como transformar a luz do céu em números?</h2>
+
+        <p>
+          Levantamentos astronômicos medem quanto brilho um objeto apresenta
+          em diferentes regiões do espectro eletromagnético. Essas medições
+          formam uma espécie de assinatura fotométrica.
+        </p>
+
+        <p>
+          Ao comparar essas características, a rede neural pode identificar
+          padrões associados aos diferentes tipos de objetos astronômicos.
+        </p>
+      </div>
+
+      <div class="pill-row">
+        <span class="pill">u</span>
+        <span class="pill">g</span>
+        <span class="pill">r</span>
+        <span class="pill">i</span>
+        <span class="pill">z</span>
+        <span class="pill">W1</span>
+        <span class="pill">W2</span>
+        <span class="pill">redshift</span>
+      </div>
+    </section>
+
+    <!-- FONTES -->
+    <section class="section">
+      <div class="grid two">
+
+        <article class="card">
+          <div class="card-body">
+            <p class="eyebrow">SDSS</p>
+
+            <h3>Sloan Digital Sky Survey</h3>
+
+            <p>
+              O SDSS fornece observações em diferentes filtros ópticos e uma
+              grande base de objetos astronômicos catalogados.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <p class="eyebrow">WISE</p>
+
+            <h3>Wide-field Infrared Survey Explorer</h3>
+
+            <p>
+              O WISE complementa as observações com informações no
+              infravermelho, adicionando novas características ao conjunto de
+              dados utilizado pelo modelo.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FECHAMENTO -->
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Além do modelo</p>
+
+        <h2>Ciência também precisa ser compreensível</h2>
+
+        <p>
+          O objetivo desta versão do AstroClassifier não é apenas mostrar uma
+          previsão. É também explicar de forma acessível como dados,
+          Astronomia e Inteligência Artificial podem trabalhar juntos.
+        </p>
+
+        <div class="actions">
+          <a class="button" href="experimente.html">
+            Experimentar o modelo
+          </a>
+
+          <a class="button secondary" href="tecnologia.html">
+            Ver como foi construído
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div id="footer"></div>
-  <script src="js/main.js"></script>
+
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

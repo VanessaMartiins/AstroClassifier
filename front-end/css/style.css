@@ -746,3 +746,54 @@ textarea {
     min-height: auto;
   }
 }
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
+
+.final-cta {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.final-cta-content {
+  padding: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(68, 216, 255, 0.10),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(255, 199, 73, 0.08),
+      transparent 38%
+    ),
+    rgba(255, 255, 255, 0.025);
+}
+
+.final-cta-content h2 {
+  margin: 10px 0 16px;
+  max-width: 760px;
+}
+
+.final-cta-content > p:not(.eyebrow) {
+  max-width: 760px;
+  margin-bottom: 28px;
+  color: #b8c7e6;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .final-cta {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .final-cta-content {
+    padding: 32px 24px;
+  }
+}
