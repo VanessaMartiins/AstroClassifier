@@ -797,3 +797,6 @@ textarea {
     padding: 32px 24px;
   }
 }
+[hidden] {
+  display: none !important;
+}
