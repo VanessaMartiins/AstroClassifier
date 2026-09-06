@@ -4,52 +4,276 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tecnologia | AstroClassifier</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
   <header class="site-header">
-    <nav class="nav" aria-label="Navegacao principal">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>AstroClassifier</span></a>
-      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AstroClassifier</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="nav-links">
-        <a href="index.html">Inicio</a><a href="sobre.html">Sobre</a><a href="experimente.html">Experimente</a><a href="desafios.html">Desafios</a><a href="resultados.html">Resultados</a><a href="tecnologia.html">Tecnologia</a><a href="contato.html">Contato</a>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="experimente.html">Experimente</a>
+        <a href="desafios.html">Desafios</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="tecnologia.html">Tecnologia</a>
+        <a href="contato.html">Contato</a>
       </div>
     </nav>
   </header>
 
   <main class="page">
+
     <section class="section">
       <div class="section-header">
-        <p class="eyebrow">Por dentro</p>
-        <h1>A tecnologia por tras da classificacao</h1>
-        <p>O projeto combina dados astronomicos, preparacao em Python e uma rede neural treinada para reconhecer padroes em medidas fotometricas.</p>
+        <p class="eyebrow">Por dentro do AstroClassifier</p>
+        <h1>Da observação astronômica à classificação</h1>
+        <p>
+          O AstroClassifier combina dados do SDSS e do WISE com técnicas de
+          preparação de dados e uma rede neural desenvolvida em PyTorch para
+          reconhecer padrões entre estrelas, galáxias e quasares.
+        </p>
       </div>
+
       <div class="grid three">
-        <article class="card"><div class="card-body"><h3>Python</h3><p>Linguagem usada para organizar dados, treinar modelos, calcular metricas e gerar os graficos de avaliacao.</p></div></article>
-        <article class="card"><div class="card-body"><h3>PyTorch</h3><p>Biblioteca que permite montar e treinar redes neurais, ajustando pesos a partir de exemplos conhecidos.</p></div></article>
-        <article class="card"><div class="card-body"><h3>Rede neural</h3><p>Modelo matematico que aprende combinacoes de entrada, como brilho e redshift, para estimar uma classe de saida.</p></div></article>
-        <article class="card"><div class="card-body"><h3>SDSS</h3><p>Levantamento astronomico que fornece observacoes em filtros opticos, muito usados para estudar objetos do ceu.</p></div></article>
-        <article class="card"><div class="card-body"><h3>WISE</h3><p>Missao que observou o ceu no infravermelho, ajudando a separar objetos com assinaturas termicas diferentes.</p></div></article>
-        <article class="card"><div class="card-body"><h3>Classificacao</h3><p>A saida final resume a previsao em STAR, GALAXY ou QSO, acompanhada de uma confianca estimada.</p></div></article>
+        <article class="card">
+          <div class="card-body">
+            <h3>Python</h3>
+            <p>
+              Linguagem utilizada para preparar os dados, treinar a rede,
+              avaliar o modelo e gerar as visualizações dos resultados.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3>PyTorch</h3>
+            <p>
+              Framework utilizado para construir e treinar a rede neural,
+              realizar a propagação dos dados e otimizar seus parâmetros.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3>Scikit-learn</h3>
+            <p>
+              Utilizado no pré-processamento dos dados, incluindo codificação
+              das classes e padronização das características de entrada.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3>SDSS</h3>
+            <p>
+              Fornece as medidas fotométricas ópticas utilizadas pelo modelo,
+              incluindo as bandas u, g, r, i e z.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3>WISE</h3>
+            <p>
+              Acrescenta observações no infravermelho nas bandas W1, W2,
+              W3 e W4, complementando as informações obtidas no óptico.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3>Rede neural</h3>
+            <p>
+              Recebe 20 características numéricas e produz probabilidades
+              para três classes: GALAXY, QSO e STAR.
+            </p>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="section">
       <div class="section-header">
-        <h2>Fluxo dos dados</h2>
-        <p>Da observacao ate a resposta final, cada etapa transforma medidas brutas em uma decisao mais facil de interpretar.</p>
+        <p class="eyebrow">Arquitetura</p>
+        <h2>Uma rede neural totalmente conectada</h2>
+        <p>
+          O modelo utiliza uma MLP — Multi-Layer Perceptron — composta por
+          duas camadas ocultas. A arquitetura foi mantida relativamente
+          simples para permitir treinamento rápido e interpretação clara
+          do experimento.
+        </p>
       </div>
-      <div class="timeline">
-        <article class="timeline-item"><div><h3>Catalogos astronomicos</h3><p class="muted">SDSS e WISE fornecem medidas de brilho e informacoes associadas aos objetos.</p></div></article>
-        <article class="timeline-item"><div><h3>Preparacao</h3><p class="muted">Os dados sao limpos, organizados e convertidos para uma escala adequada ao treinamento.</p></div></article>
-        <article class="timeline-item"><div><h3>Treinamento</h3><p class="muted">A rede neural compara previsoes com respostas conhecidas e ajusta seus pesos.</p></div></article>
-        <article class="timeline-item"><div><h3>Avaliacao</h3><p class="muted">Metricas e graficos mostram onde o modelo acerta, erra ou fica menos confiante.</p></div></article>
-        <article class="timeline-item"><div><h3>Experiencia didatica</h3><p class="muted">O front-end apresenta exemplos prontos para o publico entender a logica sem instalar ferramentas.</p></div></article>
+
+      <div class="stats-grid">
+        <article class="card">
+          <div class="card-body">
+            <p class="eyebrow">Entrada</p>
+            <h2>20</h2>
+            <p>Características astronômicas utilizadas pela rede.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <p class="eyebrow">Camadas ocultas</p>
+            <h2>64 → 64</h2>
+            <p>Neurônios com ativação ReLU e dropout de 0,3.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <p class="eyebrow">Saída</p>
+            <h2>3</h2>
+            <p>GALAXY, QSO e STAR.</p>
+          </div>
+        </article>
       </div>
     </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Treinamento</p>
+        <h2>Como o modelo aprende</h2>
+        <p>
+          Os 10.000 objetos disponíveis foram separados em conjuntos de
+          treinamento e teste. O conjunto de teste permaneceu fora do processo
+          de ajuste da rede e foi utilizado posteriormente para avaliar o
+          desempenho do modelo.
+        </p>
+      </div>
+
+      <div class="grid three">
+        <article class="card">
+          <div class="card-body">
+            <h3>8.000 objetos</h3>
+            <p>
+              Utilizados no treinamento da rede neural.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3>2.000 objetos</h3>
+            <p>
+              Reservados para a avaliação final do modelo.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3>20 épocas</h3>
+            <p>
+              Passagens pelo conjunto de treinamento para ajuste dos pesos.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="eyebrow">Fluxo dos dados</p>
+        <h2>Do catálogo à avaliação</h2>
+        <p>
+          Cada etapa transforma os dados astronômicos até que eles possam ser
+          utilizados pela rede e, posteriormente, avaliados de forma
+          reproduzível.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div>
+            <h3>1. Dados astronômicos</h3>
+            <p class="muted">
+              Informações do SDSS e do WISE formam o conjunto utilizado no
+              experimento.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div>
+            <h3>2. Preparação</h3>
+            <p class="muted">
+              Os valores são convertidos, tratados e organizados antes da
+              separação entre treinamento e teste.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div>
+            <h3>3. Padronização</h3>
+            <p class="muted">
+              O scaler é ajustado somente com os dados de treinamento e depois
+              aplicado aos dados de teste, evitando que informações do conjunto
+              de avaliação influenciem o pré-processamento.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div>
+            <h3>4. Treinamento</h3>
+            <p class="muted">
+              A rede utiliza CrossEntropyLoss e o otimizador Adam para ajustar
+              seus parâmetros durante 20 épocas.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div>
+            <h3>5. Avaliação</h3>
+            <p class="muted">
+              Acurácia, matriz de confusão, curvas ROC e outras análises ajudam
+              a compreender o comportamento do modelo no conjunto de teste.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div>
+            <h3>6. Experiência didática</h3>
+            <p class="muted">
+              O site transforma os conceitos e resultados do projeto em uma
+              experiência visual acessível, sem apresentar os exemplos
+              demonstrativos como inferências realizadas em tempo real.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
   </main>
 
   <div id="footer"></div>
-  <script src="js/main.js"></script>
+
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

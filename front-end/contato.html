@@ -4,15 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contato | AstroClassifier</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
   <header class="site-header">
-    <nav class="nav" aria-label="Navegacao principal">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>AstroClassifier</span></a>
-      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AstroClassifier</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="nav-links">
-        <a href="index.html">Inicio</a><a href="sobre.html">Sobre</a><a href="experimente.html">Experimente</a><a href="desafios.html">Desafios</a><a href="resultados.html">Resultados</a><a href="tecnologia.html">Tecnologia</a><a href="contato.html">Contato</a>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="experimente.html">Experimente</a>
+        <a href="desafios.html">Desafios</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="tecnologia.html">Tecnologia</a>
+        <a href="contato.html">Contato</a>
       </div>
     </nav>
   </header>
@@ -21,28 +41,66 @@
     <section class="section">
       <div class="section-header">
         <p class="eyebrow">Contato</p>
-        <h1>Converse sobre o projeto</h1>
-        <p>Use esta area como ponto de partida para apresentacoes, orientacao academica, melhorias de interface ou proximos passos do classificador.</p>
+        <h1>Vamos conversar sobre o projeto?</h1>
+        <p>
+          O AstroClassifier nasceu como um projeto acadêmico em Física
+          Computacional e reúne astronomia, análise de dados e redes neurais.
+          Este espaço pode ser usado para dúvidas, sugestões, discussões
+          acadêmicas ou possíveis colaborações relacionadas ao projeto.
+        </p>
       </div>
+
       <div class="contact-panel">
-        <div class="card">
+        <article class="card">
           <div class="card-body">
-            <h3>Ideias para evoluir</h3>
-            <p class="muted">Conectar o front-end ao backend, exibir previsoes reais vindas do modelo treinado, adicionar comparacoes entre classes e documentar o conjunto de dados.</p>
+            <p class="eyebrow">Sobre o contato</p>
+            <h3>Ciência também se constrói em colaboração</h3>
+            <p>
+              Sugestões sobre o modelo, visualização dos resultados,
+              interpretabilidade, dados astronômicos ou evolução da aplicação
+              são bem-vindas.
+            </p>
+
+            <p class="muted">
+              O formulário desta página é uma demonstração de interface e não
+              realiza o envio de mensagens para um servidor externo.
+            </p>
           </div>
-        </div>
+        </article>
+
         <form class="card card-body contact-form" data-contact-form>
-          <label>Nome<input name="nome" autocomplete="name" required></label>
-          <label>E-mail<input type="email" name="email" autocomplete="email" required></label>
-          <label>Mensagem<textarea name="mensagem" required></textarea></label>
-          <button class="button" type="submit">Registrar mensagem</button>
+          <label>
+            Nome
+            <input name="nome" autocomplete="name" required>
+          </label>
+
+          <label>
+            E-mail
+            <input
+              type="email"
+              name="email"
+              autocomplete="email"
+              required
+            >
+          </label>
+
+          <label>
+            Mensagem
+            <textarea name="mensagem" required></textarea>
+          </label>
+
+          <button class="button" type="submit">
+            Registrar mensagem
+          </button>
+
           <p class="muted" data-form-status></p>
         </form>
       </div>
     </section>
   </main>
 
- <div id="footer"></div>
-  <script src="js/main.js"></script>
+  <div id="footer"></div>
+
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>
