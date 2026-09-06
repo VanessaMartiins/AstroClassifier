@@ -3,17 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AstroClassifier | IA para classificar objetos astronomicos</title>
-  <meta name="description" content="AstroClassifier classifica objetos astronomicos em STAR, GALAXY e QSO usando dados fotometricos reais.">
+
+  <title>AstroClassifier | IA para classificar objetos astronômicos</title>
+
+  <meta
+    name="description"
+    content="AstroClassifier classifica objetos astronômicos em STAR, GALAXY e QSO usando dados fotométricos reais."
+  >
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <header class="site-header">
-    <nav class="nav" aria-label="Navegacao principal">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>AstroClassifier</span></a>
-      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AstroClassifier</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="nav-links">
-        <a href="index.html">Inicio</a>
+        <a href="index.html">Início</a>
         <a href="sobre.html">Sobre</a>
         <a href="experimente.html">Experimente</a>
         <a href="desafios.html">Desafios</a>
@@ -27,14 +48,32 @@
   <main>
     <section class="hero">
       <div class="hero-media" aria-hidden="true"></div>
+
       <div class="page">
         <div class="hero-grid">
-          <p class="eyebrow">Inteligencia artificial + astronomia</p>
+          <p class="eyebrow">
+            Inteligência Artificial + Astronomia
+          </p>
+
           <h1>AstroClassifier</h1>
-          <p class="lead">Uma inteligencia artificial que classifica objetos astronomicos em <strong>STAR</strong>, <strong>GALAXY</strong> e <strong>QSO</strong> usando dados fotometricos reais, ou seja, medidas de brilho captadas em diferentes filtros de observacao.</p>
+
+          <p class="lead">
+            Uma inteligência artificial que classifica objetos astronômicos em
+            <strong>STAR</strong>,
+            <strong>GALAXY</strong> e
+            <strong>QSO</strong>
+            usando dados fotométricos reais, ou seja, medidas de brilho captadas
+            em diferentes filtros de observação.
+          </p>
+
           <div class="actions">
-            <a class="button" href="experimente.html">Testar exemplos</a>
-            <a class="button secondary" href="desafios.html">Jogar quiz</a>
+            <a class="button" href="experimente.html">
+              Testar exemplos
+            </a>
+
+            <a class="button secondary" href="desafios.html">
+              Jogar quiz
+            </a>
           </div>
         </div>
       </div>
@@ -42,23 +81,71 @@
 
     <section class="page section">
       <div class="section-header">
-        <h2>O ceu traduzido em dados</h2>
-        <p>Em vez de olhar uma foto e tentar reconhecer uma forma, o projeto observa numeros: quanto brilho chega em cada faixa de cor e como esse padrao se compara a objetos ja conhecidos.</p>
+        <h2>O céu traduzido em dados</h2>
+
+        <p>
+          Em vez de olhar uma foto e tentar reconhecer uma forma, o projeto
+          observa números: quanto brilho chega em cada faixa de cor e como esse
+          padrão se compara a objetos já conhecidos.
+        </p>
       </div>
+
       <div class="grid three">
-        <article class="card"><div class="card-body"><h3>STAR</h3><p>Estrelas proximas aparecem como fontes pontuais e costumam ter redshift quase nulo.</p></div></article>
-        <article class="card"><div class="card-body"><h3>GALAXY</h3><p>Galaxias combinam luz de muitas estrelas e frequentemente mostram cores mais avermelhadas e redshift moderado.</p></div></article>
-        <article class="card"><div class="card-body"><h3>QSO</h3><p>Quasares sao nucleos galacticos muito ativos, geralmente distantes e com assinatura forte no infravermelho.</p></div></article>
+        <article class="card">
+          <div class="card-body">
+            <h3>STAR — Estrela</h3>
+
+            <p>
+              Estrelas próximas aparecem como fontes pontuais e costumam ter
+              redshift quase nulo.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3>GALAXY — Galáxia</h3>
+
+            <p>
+              Galáxias combinam a luz de muitas estrelas e frequentemente
+              apresentam cores mais avermelhadas e redshift moderado.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3>QSO — Quasar</h3>
+
+            <p>
+              Quasares são núcleos galácticos extremamente ativos, geralmente
+              distantes e com forte assinatura no infravermelho.
+            </p>
+          </div>
+        </article>
       </div>
+
       <div class="stat-row">
-        <div class="stat"><strong>3</strong><span>classes astronomicas</span></div>
-        <div class="stat"><strong>8</strong><span>medidas por exemplo</span></div>
-        <div class="stat"><strong>0</strong><span>upload de imagem nesta versao</span></div>
+        <div class="stat">
+          <strong>3</strong>
+          <span>classes astronômicas</span>
+        </div>
+
+        <div class="stat">
+          <strong>25</strong>
+          <span>características analisadas</span>
+        </div>
+
+        <div class="stat">
+          <strong>~93%</strong>
+          <span>acurácia do modelo</span>
+        </div>
       </div>
     </section>
   </main>
 
   <div id="footer"></div>
+
   <script src="js/main.js"></script>
 </body>
 </html>
