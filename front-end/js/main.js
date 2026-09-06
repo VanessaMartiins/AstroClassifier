@@ -49,16 +49,19 @@ if (contactForm) {
 }
 
 async function carregarFooter() {
+  const footer = document.getElementById("footer");
 
-    alert("Entrou na função");
+  if (!footer) return;
 
-    const resposta = await fetch("components/footer.html");
+  const resposta = await fetch("components/footer.html");
 
-    alert(resposta.status);
+  if (!resposta.ok) {
+    console.error(`Erro ao carregar o rodapé: ${resposta.status}`);
+    return;
+  }
 
-    const html = await resposta.text();
-
-    document.getElementById("footer").innerHTML = html;
+  const html = await resposta.text();
+  footer.innerHTML = html;
 }
 
 carregarFooter();
