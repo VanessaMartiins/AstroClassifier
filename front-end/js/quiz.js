@@ -14,6 +14,17 @@ const quizLabels = {
   QSO: "QSO — Quasar"
 };
 
+const featureDescriptions = {
+  U: "Banda ultravioleta próxima",
+  G: "Banda óptica",
+  R: "Banda óptica",
+  I: "Banda óptica / infravermelho próximo",
+  Z: "Banda infravermelha próxima",
+  W1: "Infravermelho · 3,4 µm",
+  W2: "Infravermelho · 4,6 µm",
+  REDSHIFT: "Desvio para o vermelho"
+};
+
 async function getExamples() {
   const response = await fetch("data/exemplos.json");
 
@@ -36,14 +47,26 @@ function formatValue(value) {
 
 function dataGrid(dados) {
   return Object.entries(dados)
-    .map(
-      ([key, value]) => `
+    .map(([key, value]) => {
+      const description =
+        featureDescriptions[key.toUpperCase()] || "";
+
+      return `
         <div class="data-point">
-          <strong>${key}</strong>
+          <div class="data-point-label">
+            <strong>${key}</strong>
+
+            ${
+              description
+                ? `<span class="data-point-description">${description}</span>`
+                : ""
+            }
+          </div>
+
           <span>${formatValue(value)}</span>
         </div>
-      `
-    )
+      `;
+    })
     .join("");
 }
 
@@ -65,9 +88,9 @@ function renderQuiz() {
         <h2>${item.nome}</h2>
 
         <p class="muted">
-          Observe como as magnitudes variam entre as bandas e compare também
-          o redshift. Tente identificar qual padrão parece mais compatível
-          com uma estrela, uma galáxia ou um quasar.
+          Compare os valores entre as diferentes bandas e observe também o redshift. 
+          Depois, escolha a classe que parece mais provável. 
+          Ao responder, você poderá comparar sua interpretação com o gabarito e entender melhor o padrão apresentado.
         </p>
 
         <div class="section">
@@ -75,6 +98,8 @@ function renderQuiz() {
             ${dataGrid(item.dados)}
           </div>
         </div>
+
+        <p class="quiz-question">Qual é o seu palpite?</p>
 
         <div class="answer-grid">
           ${Object.keys(quizLabels)

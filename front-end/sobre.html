@@ -71,10 +71,10 @@
         <h2>Da pesquisa acadêmica para uma experiência interativa</h2>
 
         <p>
-          O projeto foi desenvolvido a partir do estudo de classificação
-          fotométrica de objetos astronômicos. A proposta foi treinar uma rede
-          neural capaz de diferenciar estrelas, galáxias e quasares usando
-          características obtidas a partir de observações astronômicas.
+          O projeto foi desenvolvido a partir do estudo da classificação de objetos
+          astronômicos usando dados observacionais. A proposta foi treinar uma rede
+          neural capaz de diferenciar estrelas, galáxias e quasares a partir de
+          medidas de brilho e do redshift desses objetos.
         </p>
 
         <p>
@@ -116,8 +116,8 @@
             <h3>O que o AstroClassifier faz</h3>
 
             <p>
-              Recebe características fotométricas de um objeto astronômico e
-              utiliza uma rede neural para estimar se ele pertence à classe
+              Recebe características fotométricas e o redshift de um objeto astronômico
+              e utiliza uma rede neural para estimar se ele pertence à classe
               STAR, GALAXY ou QSO.
             </p>
           </div>
@@ -129,9 +129,8 @@
 
             <p>
               O modelo não analisa fotografias ou pixels de imagens do céu.
-              Ele trabalha com dados numéricos obtidos a partir da luz
-              observada em diferentes bandas e outras características do
-              objeto.
+              Ele trabalha com valores numéricos, como medidas de brilho em
+              diferentes bandas e o redshift do objeto.
             </p>
           </div>
         </article>
@@ -153,21 +152,30 @@
         </p>
 
         <p>
-          Ao comparar essas características, a rede neural pode identificar
-          padrões associados aos diferentes tipos de objetos astronômicos.
+          Ao combinar essas medições fotométricas com o redshift, a rede neural
+          pode identificar padrões associados aos diferentes tipos de objetos
+          astronômicos.
         </p>
       </div>
 
-      <div class="pill-row">
-        <span class="pill">u</span>
-        <span class="pill">g</span>
-        <span class="pill">r</span>
-        <span class="pill">i</span>
-        <span class="pill">z</span>
-        <span class="pill">W1</span>
-        <span class="pill">W2</span>
-        <span class="pill">redshift</span>
-      </div>
+<p class="muted feature-hint">
+  Abaixo estão algumas das características usadas pelo modelo.
+  Selecione uma delas para entender o que representa:
+</p>
+  <div class="pill-row" data-feature-pills>
+  <button class="pill" type="button" data-feature="u">u</button>
+  <button class="pill" type="button" data-feature="g">g</button>
+  <button class="pill" type="button" data-feature="r">r</button>
+  <button class="pill" type="button" data-feature="i">i</button>
+  <button class="pill" type="button" data-feature="z">z</button>
+  <button class="pill" type="button" data-feature="W1">W1</button>
+  <button class="pill" type="button" data-feature="W2">W2</button>
+  <button class="pill" type="button" data-feature="W3">W3</button>
+  <button class="pill" type="button" data-feature="W4">W4</button>
+  <button class="pill" type="button" data-feature="redshift">redshift</button>
+</div>
+
+<div class="feature-explanation" data-feature-explanation hidden></div>
     </section>
 
     <!-- FONTES -->

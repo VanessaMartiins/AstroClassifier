@@ -7,6 +7,17 @@ const labels = {
   QSO: "Quasar"
 };
 
+const featureDescriptions = {
+  U: "Banda ultravioleta próxima",
+  G: "Banda óptica",
+  R: "Banda óptica",
+  I: "Banda óptica / infravermelho próximo",
+  Z: "Banda infravermelha próxima",
+  W1: "Infravermelho · 3,4 µm",
+  W2: "Infravermelho · 4,6 µm",
+  REDSHIFT: "Desvio para o vermelho"
+};
+
 async function loadExamples() {
   const response = await fetch("data/exemplos.json");
 
@@ -28,14 +39,24 @@ function formatValue(value) {
 
 function renderDataGrid(dados) {
   return Object.entries(dados)
-    .map(
-      ([key, value]) => `
+    .map(([key, value]) => {
+      const description = featureDescriptions[key.toUpperCase()] || "";
+
+      return `
         <div class="data-point">
-          <strong>${key}</strong>
+          <div class="data-point-label">
+            <strong>${key}</strong>
+            ${
+              description
+                ? `<span class="data-point-description">${description}</span>`
+                : ""
+            }
+          </div>
+
           <span>${formatValue(value)}</span>
         </div>
-      `
-    )
+      `;
+    })
     .join("");
 }
 
@@ -44,14 +65,13 @@ function renderObject(obj) {
     <div class="card">
       <div class="card-body">
 
-        <p class="eyebrow">Exemplo fotométrico</p>
+        <p class="eyebrow">Exemplo Astronômico</p>
 
         <h2>${obj.nome}</h2>
 
         <p class="muted">
-          Esta visualização apresenta algumas características fotométricas de
-          forma simplificada. Magnitudes menores correspondem a maior brilho
-          naquela banda.
+          Esta visualização apresenta algumas características astronômicas de forma simplificada. 
+          Magnitudes menores correspondem a maior brilho naquela banda.
         </p>
 
         <div class="section">

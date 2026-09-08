@@ -98,10 +98,15 @@
         <h2>A rede reduziu progressivamente o erro</h2>
 
         <p>
-          Durante as 20 épocas de treinamento, a função de perda diminuiu de
-          aproximadamente 0,72 para 0,26. Essa redução mostra que a rede foi
-          ajustando seus parâmetros para representar melhor os padrões presentes
-          nos dados de treinamento.
+          Durante o treinamento, a rede compara suas previsões com as respostas
+          corretas e calcula o quanto está errando. Esse erro é representado por
+          um valor chamado <strong>função de perda (loss)</strong>.
+        </p>
+
+        <p>
+          Ao longo das 20 épocas, a loss diminuiu de aproximadamente 0,72 para
+          0,26. Isso mostra que a rede foi ajustando seus parâmetros e aprendendo
+          a representar melhor os padrões presentes nos dados de treinamento.
         </p>
       </div>
 
@@ -115,13 +120,13 @@
         </figure>
 
         <div class="card-body">
-          <h3>Curva de loss</h3>
+          <h3>Como o erro mudou durante o treinamento?</h3>
 
           <p>
-            A queda da loss mostra a evolução do aprendizado ao longo das épocas.
-            Como este gráfico representa apenas a perda de treinamento, ele deve
-            ser interpretado em conjunto com as métricas obtidas no conjunto de
-            teste.
+            A queda da loss mostra que o erro foi diminuindo ao longo do treinamento.
+            Mas aprender bem os exemplos usados no treino não é suficiente: também
+            precisamos verificar como a rede se comporta com objetos que ela nunca viu.
+            Por isso, os próximos resultados utilizam o conjunto de teste.
           </p>
         </div>
       </article>
@@ -134,8 +139,17 @@
         <h2>O modelo apresentou alta capacidade de discriminação</h2>
 
         <p>
-          As curvas ROC avaliam o quanto o modelo consegue separar cada classe
-          das demais em diferentes limiares de decisão.
+          Além de verificar quantos objetos foram classificados corretamente,
+          também podemos avaliar o quanto o modelo consegue distinguir uma classe
+          das outras.
+        </p>
+
+        <p>
+          Para isso, utilizamos as <strong>curvas ROC</strong>. Elas mostram o
+          desempenho dessa separação em diferentes critérios de decisão.
+          Esse comportamento pode ser resumido por uma medida chamada
+          <strong>AUC</strong>: quanto mais próximo de 1, melhor a capacidade
+          do modelo de diferenciar uma classe das demais.
         </p>
       </div>
 
@@ -149,17 +163,18 @@
         </figure>
 
         <div class="card-body">
-          <h3>Curvas ROC e AUC</h3>
+          <h3>O que este gráfico mostra?</h3>
 
           <p>
-            Os valores de AUC foram 0,961 para GALAXY, 0,994 para QSO
-            e 0,957 para STAR. Valores próximos de 1 indicam maior capacidade
-            de distinguir uma classe das demais.
+            As três classes apresentaram valores de AUC próximos de 1:
+            <strong>0,961 para GALAXY</strong>,
+            <strong>0,994 para QSO</strong> e
+            <strong>0,957 para STAR</strong>.
           </p>
 
           <p>
-            Entre as três classes, QSO apresentou o maior valor de AUC nesta
-            execução.
+            Isso indica que o modelo conseguiu separar bem as três classes.
+            Entre elas, QSO apresentou o maior valor de AUC nesta execução.
           </p>
         </div>
       </article>
@@ -172,9 +187,16 @@
         <h2>A matriz de confusão revela diferenças entre as classes</h2>
 
         <p>
-          A acurácia global resume o desempenho em um único número, mas a matriz
-          de confusão permite observar quais tipos de objeto foram mais fáceis
-          ou mais difíceis de classificar.
+          A acurácia mostra o desempenho geral da rede, mas não revela quais
+          classes ela acertou ou confundiu. Para enxergar esses detalhes,
+          utilizamos a <strong>matriz de confusão</strong>.
+        </p>
+
+        <p>
+          Nesse gráfico, cada linha representa a classe verdadeira do objeto
+          e cada coluna mostra a classificação feita pela rede. Os valores na
+          diagonal representam os acertos; os demais mostram onde uma classe
+          foi confundida com outra.
         </p>
       </div>
 
@@ -188,19 +210,22 @@
         </figure>
 
         <div class="card-body">
-          <h3>Matriz de confusão</h3>
+          <h3>O que aconteceu com cada classe?</h3>
 
           <p>
-            Das 1.380 galáxias presentes no conjunto de teste, 1.308 foram
-            classificadas corretamente. Entre os 217 quasares, 193 receberam
-            a classificação correta. Para estrelas, foram 303 acertos entre
-            403 objetos.
+            Das <strong>1.380 galáxias</strong> presentes no conjunto de teste,
+            <strong>1.308 foram classificadas corretamente</strong>.
+            Entre os <strong>217 quasares</strong>, foram
+            <strong>193 acertos</strong>. Já entre as
+            <strong>403 estrelas</strong>, o modelo classificou corretamente
+            <strong>303</strong>.
           </p>
 
           <p>
-            A principal confusão ocorreu entre STAR e GALAXY: 94 estrelas foram
-            classificadas como galáxias. Esse comportamento mostra que o
-            desempenho do modelo não é uniforme entre todas as classes.
+            A principal confusão ocorreu entre STAR e GALAXY:
+            <strong>94 estrelas foram classificadas como galáxias</strong>.
+            Isso mostra que, apesar do bom desempenho geral, algumas classes
+            foram mais difíceis para a rede distinguir do que outras.
           </p>
         </div>
       </article>
@@ -213,9 +238,18 @@
         <h2>O infravermelho teve um papel importante na classificação</h2>
 
         <p>
-          Para investigar a influência das entradas, foi utilizada uma análise
-          por permutação no conjunto de teste. Cada característica foi embaralhada
-          individualmente e foi medida a queda provocada na acurácia.
+          A rede utiliza 20 características para realizar a classificação, mas
+          nem todas influenciam o resultado da mesma forma. Podemos investigar
+          quais informações foram mais importantes observando o que acontece
+          quando alteramos uma característica de cada vez.
+        </p>
+
+        <p>
+          Para isso, foi utilizada uma técnica chamada
+          <strong>importância por permutação</strong>. Cada característica é
+          embaralhada individualmente e observamos quanto a acurácia diminui.
+          Quanto maior a queda, maior a influência daquela característica nas
+          classificações realizadas pelo modelo.
         </p>
       </div>
 
@@ -229,19 +263,21 @@
         </figure>
 
         <div class="card-body">
-          <h3>Importância por permutação</h3>
+          <h3>Quais características fizeram mais diferença?</h3>
 
           <p>
-            As maiores quedas ocorreram ao embaralhar as bandas infravermelhas
-            W1 e W2 do WISE, com reduções de aproximadamente 47,1 e 40,6 pontos
-            percentuais na acurácia.
+            As maiores quedas ocorreram quando as bandas infravermelhas
+            <strong>W1 e W2 do WISE</strong> foram embaralhadas. A acurácia caiu
+            aproximadamente <strong>47,1 e 40,6 pontos percentuais</strong>,
+            respectivamente.
           </p>
 
           <p>
-            O redshift também apresentou influência relevante, com queda de
-            aproximadamente 17,5 pontos percentuais. Isso indica que essas
-            variáveis carregam informações particularmente úteis para a
-            classificação realizada pela rede.
+            O <strong>redshift</strong> também apresentou influência importante,
+            provocando uma queda de aproximadamente
+            <strong>17,5 pontos percentuais</strong>. Neste experimento, isso mostra
+            que W1, W2 e redshift carregaram informações especialmente úteis para
+            as classificações realizadas pela rede.
           </p>
         </div>
       </article>
@@ -251,11 +287,18 @@
       <div class="section-header">
         <p class="eyebrow">05 · Probabilidades previstas</p>
 
-        <h2>Nem toda previsão recebe o mesmo grau de separação</h2>
+        <h2>Nem toda previsão é igualmente clara para a rede</h2>
 
         <p>
-          A rede produz uma distribuição de probabilidades entre as três classes.
-          O gráfico abaixo mostra, para cada objeto, a maior probabilidade prevista.
+          Para cada objeto, a rede atribui uma probabilidade às três classes:
+          STAR, GALAXY e QSO. A classe com a maior probabilidade é escolhida
+          como a previsão do modelo.
+        </p>
+
+        <p>
+          O gráfico abaixo mostra qual foi essa maior probabilidade para cada
+          objeto do conjunto de teste. Valores mais altos indicam que uma classe
+          se destacou mais das outras na saída da rede.
         </p>
       </div>
 
@@ -269,18 +312,19 @@
         </figure>
 
         <div class="card-body">
-          <h3>Distribuição das probabilidades</h3>
+          <h3>O que essas probabilidades nos mostram?</h3>
 
           <p>
-            Grande parte dos objetos recebeu uma probabilidade máxima elevada,
-            embora também existam previsões em regiões de menor separação entre
-            as classes.
+            Grande parte dos objetos recebeu uma probabilidade máxima próxima de 1.
+            Isso significa que, para muitos exemplos, uma das três classes se destacou
+            bastante das demais na saída produzida pela rede.
           </p>
 
           <p>
-            Essa probabilidade não deve ser interpretada como garantia absoluta
-            de acerto. Ela representa a saída produzida pelo modelo e não uma
-            medida independente de certeza ou calibração.
+            Porém, uma probabilidade alta <strong>não garante que a classificação
+            esteja correta</strong>. Esses valores representam a saída matemática
+            do modelo e não devem ser interpretados como uma medida absoluta de
+            certeza.
           </p>
         </div>
       </article>
