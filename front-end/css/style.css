@@ -899,3 +899,20 @@ main .stats-grid > .card {
     grid-template-columns: 1fr !important;
   }
 }
+.footer-credit {
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.footer-credit a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer-credit a:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+}
