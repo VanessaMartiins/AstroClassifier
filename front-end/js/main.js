@@ -53,7 +53,7 @@ async function carregarFooter() {
 
   if (!footer) return;
 
-  const resposta = await fetch("components/footer.html");
+  const resposta = await fetch("components/footer.html?v=2");
 
   if (!resposta.ok) {
     console.error(`Erro ao carregar o rodapé: ${resposta.status}`);
